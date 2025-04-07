@@ -2,7 +2,7 @@
   "name": "leon-app",
   "private": true,
   "scripts": {
-    "build": "remix vite:build",
+    "build": "npm run setup && remix vite:build",
     "dev": "shopify app dev",
     "config:link": "shopify app config link",
     "generate": "shopify app generate extension",
@@ -16,8 +16,7 @@
     "shopify": "shopify",
     "prisma": "prisma",
     "graphql-codegen": "graphql-codegen",
-    "vite": "vite",
-    "postinstall": "prisma generate && prisma migrate deploy"
+    "vite": "vite"
   },
   "type": "module",
   "engines": {
