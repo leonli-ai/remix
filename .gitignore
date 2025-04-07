@@ -10,12 +10,11 @@ node_modules
 /prisma/dev.sqlite-journal
 database.sqlite
 
-.env
-.env.*
 
 
 
-
+.idea
+.idea/*
 
 /extensions/*/dist
 
