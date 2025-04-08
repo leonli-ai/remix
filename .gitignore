@@ -6,16 +6,30 @@ node_modules
 /public/build/
 /public/_dev
 /app/public/build
+/prisma/dev.sqlite
+/prisma/dev.sqlite-journal
+database.sqlite
 
 
-
-
-
-.idea
-.idea/*
+package-lock.json
+yarn.lock
 
 /extensions/*/dist
 
 # Ignore shopify files created during app dev
 .shopify/*
 .shopify.lock
+
+shopify.app.kent-app.toml
+shopify.app.jyb-app.toml
+
+.history
+
+public/assets
+public/apps/
+
+.DS_Store
+.idea
+.vscode
+
+.cursorrules

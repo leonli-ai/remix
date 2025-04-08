@@ -1,69 +1,529 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
-
 model Session {
-  id            String          @id
+  id            String    @id
   shop          String
   state         String
-  isOnline      Boolean         @default(false)
+  isOnline      Boolean   @default(false)
   scope         String?
   expires       DateTime?
   accessToken   String
   userId        BigInt?
-  Configuration Configuration?
+  firstName     String?
+  lastName      String?
+  email         String?
+  accountOwner  Boolean   @default(false)
+  locale        String?
+  collaborator  Boolean?  @default(false)
+  emailVerified Boolean?  @default(false)
 }
 
-model Configuration {
-  id          Int     @id @default(autoincrement())
-  session     Session @relation(fields: [sessionId], references: [id], onDelete: Cascade)
-  sessionId   String  @unique
-  shop        String
-  accountName String
-  ready       Boolean @default(true)
-  apiVersion  String  @default("unstable")
+model StoreCompanyMapping {
+  id                    Int      @id @default(autoincrement())
+  storeName             String   @db.VarChar(255)
+  skuId                 String   @db.VarChar(255)
+  companyId             String   @db.VarChar(255)
+  customerPartnerNumber String   @db.VarChar(255)
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
+  createdBy             String?  @db.VarChar(255)
+  productTitle          String?  @db.VarChar(255)
+  updatedBy             String?  @db.VarChar(255)
+  companyName           String?  @db.VarChar(255)
 
-  @@index([sessionId])
+  @@unique([storeName, companyId, skuId, customerPartnerNumber])
+  @@map("Store_Company_Mapping")
 }
 
-model PaymentSession {
-  id            String          @id
-  gid           String
-  group         String
-  kind          String
-  shop          String
-  paymentMethod String
-  cancelUrl     String
-  proposedAt    DateTime
+model ShoppingListGroup {
+  id            BigInt              @id @default(autoincrement())
+  customerId    String              @db.VarChar(255)
+  name          String
+  description   String
+  storeName     String?             @db.VarChar(255)
+  parentGroupId BigInt?
+  createdAt     DateTime            @default(now())
+  updatedAt     DateTime            @updatedAt
+  shoppingLists ShoppingList[]
+  parentGroup   ShoppingListGroup?  @relation("ChildGroups", fields: [parentGroupId], references: [id])
+  childGroups   ShoppingListGroup[] @relation("ChildGroups")
+
+  @@index([parentGroupId])
+  @@map("Shopping_List_Group")
 }
 
-model RefundSession {
-  id         String         @id
-  gid        String
-  paymentId  String
-  proposedAt DateTime
+model ShoppingList {
+  id                BigInt             @id @default(autoincrement())
+  customerId        String             @db.VarChar(255)
+  groupId           BigInt?
+  name              String
+  storeName         String?            @db.VarChar(255)
+  isDefault         Boolean            @default(false)
+  canEdit           Boolean            @default(true)
+  createBy          String?
+  updateBy          String?
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  companyLocationId String
+  description       String?
+  group             ShoppingListGroup? @relation(fields: [groupId], references: [id])
+  shoppingListItems ShoppingListItem[]
+
+  @@unique([customerId, name, companyLocationId, storeName])
+  @@index([groupId])
+  @@map("Shopping_List")
 }
 
-model CaptureSession {
-  id         String          @id
-  gid        String
-  paymentId  String
-  proposedAt DateTime
+model ShoppingListItem {
+  id                    BigInt       @id @default(autoincrement())
+  shoppingListId        BigInt
+  productId             String       @db.VarChar(255)
+  productName           String?
+  skuId                 String       @db.VarChar(255)
+  customerPartnerNumber String?
+  quantity              Int?
+  productImageUrl       String?
+  url                   String?
+  createdAt             DateTime     @default(now())
+  updatedAt             DateTime     @updatedAt
+  productVariantId      String       @db.VarChar(255)
+  shoppingList          ShoppingList @relation(fields: [shoppingListId], references: [id])
+
+  @@index([shoppingListId])
+  @@map("Shopping_List_Item")
 }
 
-model VoidSession {
-  id         String          @id
-  gid        String
-  paymentId  String          @unique
-  proposedAt DateTime
+model SkuPriceByLocation {
+  id                BigInt   @id @default(autoincrement())
+  skuId             String
+  storeName         String?  @db.VarChar(255)
+  price             Decimal  @db.Decimal(10, 2)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  companyLocationId String
+  currencyCode      String   @db.VarChar(3)
+
+  @@map("Sku_Price_By_Location")
 }
+
+model RDSCompanyContactRole {
+  id              String                     @id @default(uuid())
+  name            String                     @unique
+  note            String?
+  roleAssignments RDSCompanyRoleAssignment[] @relation("RoleAssignments")
+
+  @@map("RDS_Company_Contact_Role")
+}
+
+model RDSCompanyRoleAssignment {
+  id                             String                @id @default(uuid())
+  companyId                      String
+  storeName                      String
+  companyContactId               String
+  roleId                         String
+  companyLocationId              String?
+  companyContactRoleAssignmentId String?
+  createdAt                      DateTime              @default(now())
+  updatedAt                      DateTime              @updatedAt
+  createdBy                      String
+  updatedBy                      String?
+  role                           RDSCompanyContactRole @relation("RoleAssignments", fields: [roleId], references: [id])
+
+  @@unique([companyId, storeName, companyLocationId, companyContactId])
+  @@map("RDS_Company_Role_Assignment")
+}
+
+model ComplianceRequest {
+  id             String           @id @default(uuid())
+  shop           String           @db.VarChar(255)
+  shopId         BigInt
+  requestType    ComplianceType
+  status         ComplianceStatus @default(PENDING)
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
+  processedAt    DateTime?
+  dueAt          DateTime
+  customerId     BigInt?
+  customerEmail  String?          @db.VarChar(255)
+  ordersCount    Int              @default(0)
+  requestPayload Json
+  requestId      String?          @db.VarChar(255)
+  notes          String?
+  logs           ComplianceLog[]
+
+  @@index([shop, requestType])
+  @@index([status, dueAt])
+  @@map("Compliance_Request")
+}
+
+model ComplianceLog {
+  id                String            @id @default(uuid())
+  requestId         String
+  createdAt         DateTime          @default(now())
+  action            String            @db.VarChar(255)
+  details           Json?
+  success           Boolean           @default(true)
+  error             String?
+  complianceRequest ComplianceRequest @relation(fields: [requestId], references: [id])
+
+  @@index([requestId])
+  @@map("Compliance_Log")
+}
+
+enum ComplianceType {
+  CUSTOMER_DATA_REQUEST
+  CUSTOMER_REDACT
+  SHOP_REDACT
+}
+
+enum ComplianceStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  FAILED
+  DELAYED
+}
+
+model Quote {
+  id                 Int        @id @default(autoincrement())
+  storeName          String
+  customerId         String
+  companyLocationId  String?
+  subtotal           Decimal    @db.Decimal(10, 2)
+  currencyCode       String
+  status             String
+  additionalNotes    String?    // General notes for the quote
+  poNumber           String?    // Purchase Order Number
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+  createdBy          String
+  updatedBy          String?
+  actionBy           String?
+  quoteItems         QuoteItem[]
+  notes              QuoteNote[] // Relation to the QuoteNote table
+  expirationDate     DateTime?
+}
+
+model QuoteNote {
+  id          Int      @id @default(autoincrement())
+  quoteId     Int
+  noteType    String   // "requested", "approved", "rejected"
+  noteContent String
+  createdBy   String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  quote       Quote    @relation(fields: [quoteId], references: [id], onDelete: Cascade)
+}
+
+model QuoteItem {
+  id               Int       @id @default(autoincrement())    // Unique identifier for the quote item
+  quoteId          Int       // Foreign key reference to the associated quote
+  productId        String    // Product ID associated with the quote item
+  variantId        String    // Variant ID of the product associated with the quote item
+  quantity         Int       // Quantity of the product requested
+  originalPrice    Decimal   @db.Decimal(10, 2)  // Original price of the product
+  offerPrice       Decimal   @db.Decimal(10, 2)  // Offer price of the product
+  description      String?   // Description of the product
+  createdAt        DateTime  @default(now()) // Timestamp for when the quote item was created
+  updatedAt        DateTime  @updatedAt      // Timestamp for when the quote item was last updated
+  quote            Quote     @relation(fields: [quoteId], references: [id]) // Relation to the Quote
+}
+
+// PO File Processing Types
+enum PoProcessType {
+  OCR
+  IMAGE_ANALYSIS
+  PDF_EXTRACTION
+}
+
+// PO File Status
+enum PoFileStatus {
+  UPLOADED
+  QUEUED
+  PROCESSING
+  COMPLETED
+  FAILED
+  ARCHIVED
+}
+
+// PO File Operation Type
+enum PoFileOperationType {
+  UPLOAD
+  QUEUE
+  PROCESS_START
+  PROCESS_COMPLETE
+  PROCESS_FAIL
+  RETRY
+  ARCHIVE
+  DELETE
+}
+
+// PO File Model
+model PoFile {
+  id                  Int               @id @default(autoincrement())
+  storeName           String            @map("store_name")
+  fileName            String            @map("file_name")
+  fileUrl             String            @map("file_url") @db.Text
+  fileType            String            @map("file_type")
+  fileSize            Int               @map("file_size")
+  
+  // Status and Processing
+  status              PoFileStatus      @default(UPLOADED)
+  processType         PoProcessType?    @map("process_type")
+  processStartedAt    DateTime?         @map("process_started_at")
+  processCompletedAt  DateTime?         @map("process_completed_at")
+  processDuration     Int?              @map("process_duration")
+  
+  // Error Handling
+  errorCode           String?           @map("error_code")
+  errorMessage        String?           @map("error_message") @db.Text
+  retryCount          Int               @default(0) @map("retry_count")
+  
+  // Processing Results
+  recognitionConfidence  Decimal?       @map("recognition_confidence") @db.Decimal(5,2)
+  extractedText         String?         @map("extracted_text") @db.Text
+  parsedData           Json?            @map("parsed_data")
+  
+  // Metadata
+  metadata            Json?
+  createdAt           DateTime          @default(now()) @map("created_at")
+  updatedAt           DateTime          @updatedAt @map("updated_at")
+  createdBy           String?           @map("created_by")
+  companyId           String?           @map("company_id") @db.VarChar(255)
+  companyLocationId   String?           @map("company_location_id") @db.VarChar(255)
+  
+  // Relations
+  histories           PoFileHistory[]
+  
+  // Indexes
+  @@index([storeName])
+  @@index([status])
+  @@index([createdAt])
+  @@index([processType])
+  @@index([companyId])
+  
+  @@map("Po_Files")
+}
+
+// PO File History Model
+model PoFileHistory {
+  id              Int               @id @default(autoincrement())
+  poFileId        Int               @map("po_file_id")
+  
+  // Operation Information
+  operationType   PoFileOperationType @map("operation_type")
+  status          String
+  message         String?             @db.Text
+  
+  // Processing Details
+  processType     PoProcessType?      @map("process_type")
+  processDetails  Json?               @map("process_details")
+  
+  // Error Information
+  errorCode       String?             @map("error_code")
+  errorMessage    String?             @map("error_message") @db.Text
+  errorDetails    Json?               @map("error_details")
+  
+  // Metadata
+  metadata        Json?
+  createdAt       DateTime            @default(now()) @map("created_at")
+  createdBy       String?             @map("created_by")
+  
+  // Relations
+  poFile          PoFile              @relation(fields: [poFileId], references: [id])
+  
+  // Indexes
+  @@index([poFileId])
+  @@index([operationType])
+  @@index([createdAt])
+  @@index([processType])
+  
+  @@map("Po_File_Histories")
+}
+
+
+
+model SellingPlan {
+  id             BigInt   @id @default(autoincrement())
+  storeName      String   /// Store context
+
+  name           String   @db.VarChar(255)
+  description    String?
+  currencyCode   String   @db.VarChar(10)
+  status         String   @default("active") /// active / inactive
+  createdById    String?   /// seller staff
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@map("Selling_Plan")
+}
+
+
+model SellingPlanItem {
+  id             BigInt   @id @default(autoincrement())
+  storeName      String
+  sellingPlanId  BigInt
+
+  variantId      String   @db.VarChar(50)
+  sku            String   @db.VarChar(50)
+  quantity       Int
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([sellingPlanId])
+  @@map("Selling_Plan_Item")
+}
+
+
+
+
+model SellingPlanDeliveryPolicy {
+  id             BigInt   @id @default(autoincrement())
+  storeName      String
+  sellingPlanId  BigInt
+
+  offerDiscount  Boolean  @default(false)
+  intervalValue  Int
+  intervalUnit   String
+  discountType   String?
+  discountValue  Float?
+  deliveryAnchor Int?
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([sellingPlanId])
+  @@map("Selling_Plan_Delivery_Policy")
+}
+
+
+
+
+
+model SubscriptionContract {
+  id                      BigInt     @id @default(autoincrement())
+  storeName               String     /// Multi-tenant identifier (Shopify store)
+
+  name                    String     @db.VarChar(255) /// Display name of subscription (e.g., Order #1123)
+  status                  String     @default("active") /// Status: active, paused, cancelled
+  note                    String?    /// Optional description or internal note
+
+  sellingPlanId           BigInt?    /// Optional: Reference to predefined plan (if applicable)
+
+  // B2B Identity
+  companyId               String     /// Shopify company ID
+  companyLocationId       String     /// Shopify company location ID
+  customerId              String?     /// Shopify customer ID
+
+  approvedById            String?    /// Optional: seller staff ID
+  approvedByName          String?    /// Optional: for fuzzy filtering
+
+  // Scheduling
+  startDate               DateTime   /// Subscription start date
+  endDate                 DateTime   /// Subscription end date
+  intervalValue           Int        /// Frequency number (e.g., 2)
+  intervalUnit            String     /// Frequency unit (e.g., weeks/months)
+  deliveryAnchor          Int?       /// 1~7 (Mon~Sun) for weekly, 1~31 for monthly
+  nextOrderCreationDate   DateTime   /// Next time to generate a scheduled order
+
+  // Pricing & Discount
+  discountType            String?    /// Discount type (percentage, amount, fixed_price)
+  discountValue           Float?     /// Value of the discount
+
+  // Finance
+  currencyCode            String     /// e.g., USD
+  orderTotal              Decimal    @db.Decimal(10, 2) /// Total of subscription per cycle (product subtotal + shipping)
+  poNumber                String?    /// Optional Purchase Order number
+  customerPaymentMethodId String?    /// Optional payment method ID from Shopify
+
+
+  // shippping method 
+  shippingMethodId   String?   @db.VarChar(255)   /// Selected shipping method ID
+  shippingMethodName String?   @db.VarChar(255)  /// Human readable name (e.g., Standard 3-5 Days)
+  shippingCost       Decimal?  @db.Decimal(10, 2)/// Shipping cost at time of creation
+
+
+
+  createdAt               DateTime   @default(now())
+  updatedAt               DateTime   @updatedAt
+
+  // Logic-only relation
+  // lines: SubscriptionContractLine[]
+  // orders: SubscriptionOrder[]
+  @@map("Subscription_Contract")
+}
+
+
+
+
+
+model SubscriptionContractLine {
+  id                     BigInt   @id @default(autoincrement())
+  storeName              String   /// Store context
+  subscriptionContractId BigInt   /// Logical foreign key to SubscriptionContract
+
+  variantId              String   @db.VarChar(50) /// Shopify product variant GID
+  sku                    String   @db.VarChar(50) /// SKU code
+  quantity               Int
+  price                  Decimal  @db.Decimal(10, 2) /// Price per unit (after discount)
+  customerPartnerNumber  String?  @db.VarChar(50)   /// Buyer's internal product code
+
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+
+  @@index([subscriptionContractId])
+  @@map("Subscription_Contract_Line")
+}
+
+
+
+model SubscriptionOrder {
+  id                     BigInt   @id @default(autoincrement())
+  storeName              String   /// Store context
+  subscriptionContractId BigInt   /// Logical foreign key
+
+  shopifyOrderId         String   @db.VarChar(50) /// GID from Shopify Order
+  orderNumber            String   @db.VarChar(50) /// Order label (e.g. #1110)
+  poNumber               String?  @db.VarChar(50)
+
+  orderTotal             Decimal?  @db.Decimal(10, 2)
+  status                 String?   @db.VarChar(20)
+  orderedDate            DateTime?
+
+  createdById            String?
+  createdByName          String?
+  approvedById           String?
+  approvedByName         String?
+
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+
+  @@index([subscriptionContractId])
+  @@map("Subscription_Order")
+}
+
+
+/// Log entry for subscription contract scheduling result
+model SubscriptionScheduleLog {
+  id                     BigInt   @id @default(autoincrement()) /// Auto-increment primary key
+  storeName              String   /// Shopify store name (multi-tenant context)
+  subscriptionContractId BigInt   /// Logically linked to SubscriptionContract (no relation)
+  scheduledAt            DateTime /// Scheduler execution timestamp
+  status                 String   /// success | failed | skipped
+  message                String?  /// Optional log message or error details
+  createdAt              DateTime @default(now())
+
+  @@index([subscriptionContractId])
+  @@map("Subscription_Schedule_Log")
+} 

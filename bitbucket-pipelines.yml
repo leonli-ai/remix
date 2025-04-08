@@ -1,0 +1,140 @@
+image: google/cloud-sdk:latest
+
+options:
+  docker: true
+definitions:
+  caches:
+    build-info: ~/.build-info
+  steps:
+    - step: &versioning_tag
+        name: "Versioning by tag"
+        script:
+          - echo $BITBUCKET_BUILD_NUMBER-$BITBUCKET_TAG > build-info
+        artifacts:
+          - build-info
+    - step: &terragrunt_plan
+        image: alpine/terragrunt:1.1.8
+        name: Terragrunt Plan DEV
+        script:
+          - cd release
+          - export VERSION=`cat build-info`
+          - echo ${GOOGLE_CLOUD_KEY_NON_PROD} > /tmp/gcloud-api.json
+          - export GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcloud-api.json
+          - export PATH_TO_TF=shopify-b2b-rds-iac/non-prod/dev/cloud-run
+          - git clone https://$INTEGRATION_USER:$INTEGRATION_USER_APP_PASSWORD@bitbucket.org/aaxisdigital/shopify-b2b-rds-iac.git
+          - export DOCKER_VERSION=$BITBUCKET_BUILD_NUMBER
+          - ./plan.sh
+    - step: &terragrunt_apply
+        caches:
+          - build-info
+        image: alpine/terragrunt:1.1.8
+        name: Terragrunt Apply DEV
+        trigger: manual
+        script:
+          - cd release
+          - export VERSION=`cat build-info`
+          - echo ${GOOGLE_CLOUD_KEY_NON_PROD} > /tmp/gcloud-api.json
+          - export GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcloud-api.json
+          - export PATH_TO_TF=shopify-b2b-rds-iac/non-prod/dev/cloud-run
+          - git clone https://$INTEGRATION_USER:$INTEGRATION_USER_APP_PASSWORD@bitbucket.org/aaxisdigital/shopify-b2b-rds-iac.git
+          - export DOCKER_VERSION=$BITBUCKET_BUILD_NUMBER
+          - ./apply.sh
+    - step: &terragrunt_plan_prod
+        image: alpine/terragrunt:1.1.8
+        name: Terragrunt Plan PROD
+        script:
+          - cd release
+          - export VERSION=`cat build-info`
+          - echo ${GOOGLE_CLOUD_KEY_PROD} > /tmp/gcloud-api.json
+          - export GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcloud-api.json
+          - export PATH_TO_TF=shopify-b2b-rds-iac/prod/cloud-run
+          - git clone https://$INTEGRATION_USER:$INTEGRATION_USER_APP_PASSWORD@bitbucket.org/aaxisdigital/shopify-b2b-rds-iac.git
+          - export DOCKER_VERSION=$BITBUCKET_BUILD_NUMBER
+          - ./plan.sh
+    - step: &terragrunt_apply_prod
+        caches:
+          - build-info
+        image: alpine/terragrunt:1.1.8
+        name: Terragrunt Apply PROD
+        trigger: manual
+        script:
+          - cd release
+          - export VERSION=`cat build-info`
+          - echo ${GOOGLE_CLOUD_KEY_PROD} > /tmp/gcloud-api.json
+          - export GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcloud-api.json
+          - export PATH_TO_TF=shopify-b2b-rds-iac/prod/cloud-run
+          - git clone https://$INTEGRATION_USER:$INTEGRATION_USER_APP_PASSWORD@bitbucket.org/aaxisdigital/shopify-b2b-rds-iac.git
+          - export DOCKER_VERSION=$BITBUCKET_BUILD_NUMBER
+          - ./apply.sh
+  services:
+    docker:
+      memory: 3072
+    docker-with-double-size:
+      memory: 7168
+      type: docker
+pipelines:
+  branches:
+    main:
+      - step: *versioning_tag
+      - step:
+          name: Build and Push to GCP Non-Prod
+          size: 2x
+          services: [docker-with-double-size]
+          caches:
+            - docker
+          script:
+            - echo $GOOGLE_CLOUD_KEY_NON_PROD > ./gcloud-api-key.json
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            - gcloud config set project $GOOGLE_CLOUD_PROJECT_NON_PROD
+            - gcloud auth configure-docker us-east1-docker.pkg.dev
+            - export DOCKER_BUILDKIT=0
+            - docker build -t us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_NON_PROD/shopify-rds-dev-docker-repo/shopify-b2b-app:$BITBUCKET_BUILD_NUMBER .
+            - docker push us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_NON_PROD/shopify-rds-dev-docker-repo/shopify-b2b-app:$BITBUCKET_BUILD_NUMBER
+            - docker tag us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_NON_PROD/shopify-rds-dev-docker-repo/shopify-b2b-app:$BITBUCKET_BUILD_NUMBER us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_NON_PROD/shopify-rds-dev-docker-repo/shopify-b2b-app:latest
+            - docker push us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_NON_PROD/shopify-rds-dev-docker-repo/shopify-b2b-app:$BITBUCKET_BUILD_NUMBER
+            - docker push us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_NON_PROD/shopify-rds-dev-docker-repo/shopify-b2b-app:latest
+      - step: *terragrunt_plan
+      - step: *terragrunt_apply
+      - step:
+          name: Push to GCP Prod
+          size: 2x
+          services: [ docker-with-double-size ]
+          caches:
+            - docker
+          script:
+            - echo $GOOGLE_CLOUD_KEY_NON_PROD > ./gcloud-api-key.json
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            - gcloud config set project $GOOGLE_CLOUD_PROJECT_NON_PROD
+            - gcloud auth configure-docker us-east1-docker.pkg.dev
+            - docker pull us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_NON_PROD/shopify-rds-dev-docker-repo/shopify-b2b-app:$BITBUCKET_BUILD_NUMBER
+            - echo $GOOGLE_CLOUD_KEY_PROD > ./gcloud-api-key.json
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            - gcloud config set project $GOOGLE_CLOUD_PROJECT_PROD
+            - gcloud auth configure-docker us-east1-docker.pkg.dev
+            - docker tag us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_NON_PROD/shopify-rds-dev-docker-repo/shopify-b2b-app:$BITBUCKET_BUILD_NUMBER us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_PROD/shopify-rds-prod-docker-repo/shopify-b2b-app:$BITBUCKET_BUILD_NUMBER
+            - docker push us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_PROD/shopify-rds-prod-docker-repo/shopify-b2b-app:$BITBUCKET_BUILD_NUMBER
+            - docker tag us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_PROD/shopify-rds-prod-docker-repo/shopify-b2b-app:$BITBUCKET_BUILD_NUMBER us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_PROD/shopify-rds-prod-docker-repo/shopify-b2b-app:latest
+            - docker push us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_PROD/shopify-rds-prod-docker-repo/shopify-b2b-app:latest
+      - step: *terragrunt_plan_prod
+      - step: *terragrunt_apply_prod
+    
+    prod:
+      - step: *versioning_tag
+      - step:
+          name: Build and Push to GCP Prod
+          size: 2x
+          services: [docker-with-double-size]
+          caches:
+            - docker
+          script:
+            - echo $GOOGLE_CLOUD_KEY_PROD > ./gcloud-api-key.json
+            - gcloud auth activate-service-account --key-file gcloud-api-key.json
+            - gcloud config set project $GOOGLE_CLOUD_PROJECT_PROD
+            - gcloud auth configure-docker us-east1-docker.pkg.dev
+            - export DOCKER_BUILDKIT=0
+            - docker build -t us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_PROD/shopify-rds-prod-docker-repo/shopify-b2b-app:$BITBUCKET_BUILD_NUMBER .
+            - docker push us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_PROD/shopify-rds-prod-docker-repo/shopify-b2b-app:$BITBUCKET_BUILD_NUMBER
+            - docker tag us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_PROD/shopify-rds-prod-docker-repo/shopify-b2b-app:$BITBUCKET_BUILD_NUMBER us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_PROD/shopify-rds-prod-docker-repo/shopify-b2b-app:latest
+            - docker push us-east1-docker.pkg.dev/$GOOGLE_CLOUD_PROJECT_PROD/shopify-rds-prod-docker-repo/shopify-b2b-app:latest
+      - step: *terragrunt_plan_prod
+      - step: *terragrunt_apply_prod

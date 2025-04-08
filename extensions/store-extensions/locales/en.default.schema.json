@@ -1,0 +1,93 @@
+{
+  "quick_order_block": {
+    "name": "Quick Order Block",
+    "settings": {
+      "quick_order_label": "Quick Order Label",
+      "margin_horizontal": "Margin Horizontal",
+      "quick_order_link": "Quick Order Link"
+    },
+    "defaults": {
+      "quick_order_label": "Quick Order",
+      "quick_order_link": "/"
+    }
+  },
+  "partner_code_search_action": {
+    "name": "Partner Code Search Action",
+    "settings": {
+      "partner_code_search_link": "Partner Code Search Link"
+    },
+    "defaults": {
+      "partner_code_search_link": "/search"
+    }
+  },
+  "compare_bar": {
+    "name": "Compare Tray",
+    "settings": {}
+  },
+  "shopping_lists_block": {
+    "name": "Shopping Lists Block",
+    "settings": {
+      "shopping_lists_label": "Shopping Lists Label",
+      "shopping_lists_link": "Shopping Lists Link",
+      "margin_horizontal": "Margin Horizontal"
+    },
+    "defaults": {
+      "shopping_lists_label": "Shopping Lists",
+      "shopping_lists_link": "/"
+    }
+  },
+  "company_management_block": {
+    "name": "Company Management Block",
+    "settings": {
+      "company_management_label": "Company Management Label",
+      "company_management_link": "Company Management Link"
+    },
+    "defaults": {
+      "company_management_label": "Company Management",
+      "company_management_link": "/apps/customer-account/company-management/ship-to-locations"
+    }
+  },
+  "list_price_block": {
+    "name": "List Price",
+    "settings": {
+      "list_price_label": "List Price Label",
+      "price_label": "Price Label"
+    },
+    "defaults": {
+      "list_price_label": "List",
+      "price_label": "Price:"
+    }
+  },
+  "customer_partner_number": {
+    "name": "Customer Partner Number",
+    "settings": {
+      "selector_groups": "Selector Groups Configuration",
+      "selector_groups_info": "JSON configuration for different page layouts. Each group should contain container, sku_link, and insert_position selectors.",
+      "customer_partner_number_label": "Customer Partner Number Label"
+    },
+    "defaults": {
+      "customer_partner_number_label": "Customer Partner Number"
+    }
+  },
+  "price_list_block": {
+    "name": "Price List Block",
+    "settings": {
+      "price_list_label": "Price List Label"
+    },
+    "defaults": {
+      "price_list_label": "Price List"
+    }
+  },
+  "coveo_search": {
+    "name": "Coveo Search",
+    "settings": {
+      "coveo_search_label": "Coveo Search Label",
+    },
+    "defaults": {
+      "coveo_search_label": "Coveo Search"
+    }
+  },
+  "coveo_search_results": {
+    "name": "Coveo Search Results"
+  }
+}

@@ -16,6 +16,13 @@
     "moduleResolution": "Bundler",
     "target": "ES2022",
     "baseUrl": ".",
-    "types": ["node"]
+    "types": ["node"],
+    "paths": {
+      "~/*": ["./app/*"]
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./app/types"
+    ]
   }
 }

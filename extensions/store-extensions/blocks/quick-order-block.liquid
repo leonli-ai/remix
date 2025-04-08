@@ -1,0 +1,28 @@
+{% assign current_locale = request.locale.iso_code %}
+{% assign base_path = '/apps/customer-account/quick-order' %}
+{% if current_locale == 'en' %}
+  {% assign localized_url = base_path %}
+{% else %}
+  {% assign localized_url = '/' | append: current_locale | append: base_path %}
+{% endif %}
+
+<a href="{{ localized_url }}" class="quick-order-wrapper">
+  {% render 'icon-quick-order' %}
+
+  <p>{{ block.settings.quick_order_label }}</p>
+</a>
+
+{% schema %}
+{
+  "name": "t:quick_order_block.name",
+  "target": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "quick_order_label",
+      "label": "t:quick_order_block.settings.quick_order_label",
+      "default": "t:quick_order_block.defaults.quick_order_label"
+    }
+  ]
+}
+{% endschema %}

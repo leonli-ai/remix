@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": ".terragrunt-repo-cache",
+			"path": "../../../.terragrunt-repo-cache"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {}
+}

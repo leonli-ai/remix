@@ -1,0 +1,15 @@
+
+{% assign id = customer.current_company.id | default: '' %}
+{% assign appUrl = shop.metafields.aaxis_streamline.aaxis_streamline_appUrl | default: '' %}
+{% assign store = shop.domain | default: '' %}
+<script id="partner-search-action" data-app-url="{{ appUrl }}" data-id="{{ id }}" data-store="{{store}}" src="{{ 'partner-code-search.js' | asset_url }}" defer></script>
+<script id="partner-search-element" data-app-url="{{ appUrl }}" data-id="{{ id }}" data-store="{{store}}" src="{{ 'partner-search.js' | asset_url }}" defer></script>
+
+
+{% schema %}
+{
+  "name": "t:partner_code_search_action.name",
+  "target": "section",
+  "settings": []
+}
+{% endschema %}

@@ -1,0 +1,30 @@
+query RunInput {
+  cart {
+    attribute {
+      key
+      value
+    }
+    lines {
+      id
+      quantity
+      attribute {
+        key
+        value
+      }
+      cost {
+        amountPerQuantity {
+          amount
+          currencyCode
+        }
+        subtotalAmount {
+          amount
+          currencyCode
+        }
+        totalAmount {
+          amount
+          currencyCode
+        }
+      }
+    }
+  }
+}

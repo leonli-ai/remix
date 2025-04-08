@@ -1,0 +1,492 @@
+<template id='shopify-section-coveo-search-results'>
+  <div
+    id='shopify-section-coveo-search-results'
+    class='shopify-section'
+  >
+    <div class='coveo-search-results-section'>
+      <div class='coveo-sort-section'>
+        <div class='coveo-sort-section-wrapper'>
+          <div class='coveo-sort-wrapper'>
+            <span>Sorted By: </span>
+            <div class='coveo-sort-dropdown'>
+              <select
+                id='coveoSortDropdown'
+                aria-label='Sort results'
+              >
+                <option value='relevance'>Relevance</option>
+                <option value='price-asc'>Price: Low to High</option>
+                <option value='price-desc'>Price: High to Low</option>
+                <option value='name-asc'>Name: A-Z</option>
+                <option value='name-desc'>Name: Z-A</option>
+              </select>
+              <span>
+                <svg
+                  aria-hidden='true'
+                  focusable='false'
+                  width='16'
+                  height='16'
+                  viewBox='0 0 10 6'
+                >
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor">
+                  </path>
+                </svg>
+              </span>
+            </div>
+          </div>
+          <span
+            id='coveoResultCount'
+            class='coveo-result-count'
+          ></span>
+        </div>
+        
+        <div class="coveo-per-page-wrapper-container">
+          <div class='coveo-per-page-wrapper'>
+            <span>Per page: </span>
+            <div class='coveo-per-page-dropdown'>
+              <select
+                id='coveoPerPageDropdown'
+                aria-label='Results per page'
+              >
+                <option value='12'>12</option>
+                <option value='24'>24</option>
+                <option value='36'>36</option>
+                <option value='48'>48</option>
+              </select>
+              <span>
+                <svg
+                  aria-hidden='true'
+                  focusable='false'
+                  width='16'
+                  height='16'
+                  viewBox='0 0 10 6'
+                >
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+  
+          <div class='view-display-container'>
+            <span class='view-display-text'>Display</span>
+            <div class='view-controls'>
+              <button
+                type='button'
+                data-view='list'
+                class='view-button'
+              >
+                <span class='grid-list-icon'>
+                  <svg
+                    viewBox='0 0 22 22'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <rect width="5" height="4" rx="1" fill="currentColor"></rect>
+                    <rect x="7" width="15" height="4" rx="1" fill="currentColor"></rect>
+                    <rect y="6" width="5" height="4" rx="1" fill="currentColor"></rect>
+                    <rect x="7" y="6" width="15" height="4" rx="1" fill="currentColor"></rect>
+                    <rect y="12" width="5" height="4" rx="1" fill="currentColor"></rect>
+                    <rect x="7" y="12" width="15" height="4" rx="1" fill="currentColor"></rect>
+                    <rect y="18" width="5" height="4" rx="1" fill="currentColor"></rect>
+                    <rect x="7" y="18" width="15" height="4" rx="1" fill="currentColor"></rect>
+                  </svg>
+                </span>
+              </button>
+              <button
+                type='button'
+                data-view='grid'
+                class='view-button active'
+              >
+                <span class='grid-list-icon'>
+                  <svg
+                    viewBox='0 0 22 22'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <rect width="6" height="6" rx="1" fill="currentColor"></rect>
+                    <rect x="8" width="6" height="6" rx="1" fill="currentColor"></rect>
+                    <rect x="16" width="6" height="6" rx="1" fill="currentColor"></rect>
+                    <rect y="8" width="6" height="6" rx="1" fill="currentColor"></rect>
+                    <rect x="8" y="8" width="6" height="6" rx="1" fill="currentColor"></rect>
+                    <rect x="16" y="8" width="6" height="6" rx="1" fill="currentColor"></rect>
+                    <rect y="16" width="6" height="6" rx="1" fill="currentColor"></rect>
+                    <rect x="8" y="16" width="6" height="6" rx="1" fill="currentColor"></rect>
+                    <rect x="16" y="16" width="6" height="6" rx="1" fill="currentColor"></rect>
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class='coveo-search-results-container'>
+        <div class='coveo-facet-sidebar'>
+          <div class='coveo-facet-sidebar-header'>
+            <h3 class='coveo-facet-sidebar-title'>Filter by</h3>
+            <button class='coveo-facet-sidebar-clear'>Clear All</button>
+          </div>
+          <div
+            id='coveoSelectedFilters'
+            class='coveo-selected-filters'
+          >
+            <!-- Selected filters will be dynamically inserted here -->
+          </div>
+          <div
+            id='coveoFacetList'
+            class='coveo-facet-list'
+          >
+            <!-- Facets will be dynamically inserted here -->
+          </div>
+        </div>
+
+        <div class='coveo-facet-sidebar-mobile'>
+          <div class='coveo-facet-sidebar-mobile-filters'>
+            <div class='coveo-facet-sidebar-mobile-filters-icon'>
+              <svg
+                class='icon icon-filter'
+                xmlns='http://www.w3.org/2000/svg'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                stroke-width='2'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+              >
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+              </svg>
+            </div>
+            <span class='coveo-facet-sidebar-mobile-filter-label'>Filters and sort</span>
+          </div>
+          <div class='coveo-facet-sidebar-mobile-filters-count'>
+            <span
+              class='coveo-facet-sidebar-mobile-filters-count-label'
+              id='coveoFacetSidebarMobileFiltersCount'
+              >0</span
+            >
+            <span class='coveo-facet-sidebar-mobile-filters-count-label'>results</span>
+          </div>
+        </div>
+
+        <div class='coveo-results-container'>
+          <div
+            id='coveoResultsList'
+            class='coveo-results-list'
+          >
+            <!-- Results will be dynamically inserted here -->
+          </div>
+
+          <div
+            id='coveoPagination'
+            class='coveo-pagination'
+          >
+            <!-- Pagination will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Templates -->
+    <template id='coveoPaginationTemplate'>
+      <div class='coveo-pagination-controls'>
+        <div class='coveo-pagination-info'><span class='coveo-pagination-range'></span> of <span class='coveo-pagination-total'></span> records</div>
+        <div class='coveo-pagination-navigation'>
+          <button
+            class='coveo-pagination-prev'
+            disabled
+          >
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='16'
+              height='16'
+              viewBox='0 0 18 18'
+              fill='none'
+            >
+              <path d="M4.68979 8.41691L11.3657 1.74139C11.6875 1.41954 12.2096 1.41954 12.5315 1.74139L13.3102 2.5201C13.6317 2.84161 13.632 3.36236 13.3116 3.68456L8.02068 8.99983L13.3112 14.3154C13.632 14.6376 13.6314 15.1584 13.3098 15.4799L12.5311 16.2586C12.2093 16.5805 11.6872 16.5805 11.3653 16.2586L4.68979 9.58274C4.36793 9.26089 4.36793 8.73877 4.68979 8.41691Z" fill="currentColor"></path>
+            </svg>
+            Prev
+          </button>
+          <div class='coveo-pagination-pages'><span class='coveo-current-page'></span> of <span class='coveo-total-pages'></span></div>
+          <button class='coveo-pagination-next'>
+            Next
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='16'
+              height='16'
+              viewBox='0 0 18 18'
+              fill='none'
+            >
+              <path d="M13.3101 9.58293L6.63442 16.2585C6.31247 16.5805 5.79049 16.5805 5.46856 16.2585L4.68996 15.4799C4.36855 15.1585 4.36794 14.6376 4.68859 14.3154L9.97915 8.99998L4.68859 3.68456C4.36794 3.36239 4.36855 2.84148 4.68996 2.52007L5.46856 1.74147C5.79052 1.41951 6.3125 1.41951 6.63442 1.74147L13.31 8.41707C13.632 8.73899 13.632 9.26097 13.3101 9.58293Z" fill="currentColor"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </template>
+
+    <template id='coveoResultTemplate'>
+      <div class='coveo-result-item'>
+        <div class='coveo-result-image'>
+          <a
+            class='coveo-result-link'
+            href='#'
+          >
+            <img
+              src=''
+              alt='Product image'
+              width='200'
+              height='200'
+            >
+          </a>
+        </div>
+        <div class='coveo-result-content'>
+          <div class='coveo-result-brand'></div>
+          <h2 class='coveo-result-title'>
+            <a
+              class='coveo-result-link'
+              href='#'
+            ></a>
+          </h2>
+          <div class='coveo-result-pricing'>
+            <div class='coveo-list-price'>List Price: <span class='coveo-list-price-value'></span></div>
+            <div class='coveo-your-price'>Your Price: <span class='coveo-your-price-value'></span><span class='coveo-price-unit'>/each</span></div>
+          </div>
+          <div class='coveo-result-details'>
+            <div class='coveo-partner-number'>Customer Partner Number: <span class='coveo-partner-number-value'></span></div>
+            <div class='coveo-sku'>SKU: <span class='coveo-sku-value'></span></div>
+          </div>
+        </div>
+        <div class='coveo-result-actions-wrapper'>
+          <div class='coveo-compare-wrapper'>
+            <label class='compare-label'>
+              <input
+                type='checkbox'
+                name='compare'
+                class='compare-checkbox'
+                style='display: none;'
+                value=''
+                data-product-title=''
+                data-product-image=''
+                data-product-url=''
+              >
+              <div class='compare-checkbox-custom'>
+                <svg
+                  class='compare-checkbox-icon'
+                  viewBox='0 0 16 16'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path d="M13.3334 4L6.00008 11.3333L2.66675 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </div>
+              <span class='compare-text'>Compare</span>
+            </label>
+          </div>
+          <div class='coveo-result-actions'>
+            <button class='coveo-add-to-cart'></button>
+            <button class='coveo-add-to-list'></button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template id='checkbox-template'>
+      <svg
+        xmlns='http://www.w3.org/2000/svg'
+        width='24'
+        height='24'
+        viewBox='0 0 24 24'
+        fill='none'
+        class='icon-select'
+      >
+        <rect x="0.5" y="0.5" width="23" height="23" rx="2.5" fill="none" stroke="#84888B"></rect>
+      </svg>
+
+      <svg
+        aria-hidden='true'
+        class='icon icon-checkmark'
+        width='1.1rem'
+        height='0.7rem'
+        viewBox='0 0 11 7'
+        fill='none'
+        xmlns='http://www.w3.org/2000/svg'
+      >
+        <path d="M1.5 3.5L2.83333 4.75L4.16667 6L9.5 1" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </template>
+
+    <template id='coveoFacetTemplate'>
+      <div class='coveo-facet'>
+        <div class='coveo-facet-header'>
+          <h4 class='coveo-facet-title'></h4>
+          <button class='coveo-facet-toggle'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='24'
+              height='24'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              stroke-width='2'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+            >
+              <polyline points='6 9 12 15 18 9'></polyline>
+            </svg>
+          </button>
+        </div>
+        <div class='coveo-facet-values'></div>
+      </div>
+    </template>
+
+    <template id='coveoFacetValueTemplate'>
+      <div class='coveo-facet-value'>
+        <label class='coveo-facet-value-label'>
+          <div class='coveo-checkbox'>
+            <input
+              type='checkbox'
+              class='coveo-facet-checkbox'
+            >
+            <span class='coveo-checkbox-icon'></span>
+          </div>
+          <span class='coveo-facet-value-name'></span>
+          <span class='coveo-facet-value-count'></span>
+        </label>
+      </div>
+    </template>
+
+    <template id='buttonLoadingTemplate'>
+      <svg
+        aria-hidden='true'
+        focusable='false'
+        class=''
+        viewBox='0 0 66 66'
+        xmlns='http://www.w3.org/2000/svg'
+      >
+        <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+      </svg>
+    </template>
+
+    <!-- New template for filter tags -->
+    <template id='coveoFilterTagTemplate'>
+      <div class='coveo-selected-filter'>
+        <div class='coveo-selected-filter-content'>
+          <span class='coveo-selected-filter-label'></span>
+          <span class='coveo-selected-filter-value'></span>
+        </div>
+        <button
+          class='coveo-selected-filter-remove'
+          aria-label='Remove filter'
+        >
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='24'
+            height='24'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke='currentColor'
+            stroke-width='3'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            class='lucide lucide-x-icon lucide-x'
+          >
+            <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+          </svg>
+        </button>
+      </div>
+    </template>
+
+    <template id='coveo-facet-mobile-modal'>
+      <div class='coveo-facet-mobile-modal'>
+        <div class='coveo-facet-mobile-modal-header'>
+          <div class='coveo-facet-sidebar-mobile-title'>
+            <div class='coveo-facet-sidebar-mobile-title-icon'>
+              <svg
+                class='icon icon-filter'
+                xmlns='http://www.w3.org/2000/svg'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                stroke-width='2'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+              >
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+              </svg>
+            </div>
+            <span class='coveo-facet-sidebar-mobile-title-label'>Filters and sort</span>
+          </div>
+          <button class='coveo-facet-mobile-modal-close'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='32'
+              height='32'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              stroke-width='3'
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              class='lucide lucide-x-icon lucide-x'
+            >
+              <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class='coveo-facet-mobile-modal-content'>
+          <div class='coveo-mobile-sort-wrapper'>
+            <h4>Sort by</h4>
+            <div class='coveo-sort-dropdown'>
+              <select
+                id='coveoMobileSortDropdown'
+                aria-label='Sort results'
+              >
+                <option value='relevance'>Relevance</option>
+                <option value='price-asc'>Price: Low to High</option>
+                <option value='price-desc'>Price: High to Low</option>
+                <option value='name-asc'>Name: A-Z</option>
+                <option value='name-desc'>Name: Z-A</option>
+              </select>
+              <span>
+                <svg
+                  aria-hidden='true'
+                  focusable='false'
+                  width='16'
+                  height='16'
+                  viewBox='0 0 10 6'
+                >
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
+                </svg>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class='coveo-facet-mobile-modal-footer'>
+          <button class='coveo-facet-mobile-modal-clear'>Clear All</button>
+          <button class='coveo-facet-mobile-modal-apply'>Apply</button>
+        </div>
+      </div>
+    </template>
+  </div>
+</template>
+
+<script>
+  // Reset the modules before loading to avoid conflicts
+  window.CoveoConfigModule = undefined;
+  window.CoveoUtilsModule = undefined;
+  window.CoveoRenderersModule = undefined;
+  window.CoveoMainModule = undefined;
+
+  window.coveoModulePaths = {
+    module1: "{{ 'coveo-search-results-module1.js' | asset_url }}",
+    module2: "{{ 'coveo-search-results-module2.js' | asset_url }}",
+    module3: "{{ 'coveo-search-results-module3.js' | asset_url }}",
+    module4: "{{ 'coveo-search-results-module4.js' | asset_url }}",
+  };
+</script>
+
+{% schema %}
+{
+  "name": "t:coveo_search_results.name",
+  "target": "section",
+  "javascript": "coveo-search-results.js",
+  "stylesheet": "coveo-search-results.css"
+}
+{% endschema %}

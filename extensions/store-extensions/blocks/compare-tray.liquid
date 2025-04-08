@@ -1,0 +1,63 @@
+{% assign include_in_compare = "'/collections', '/search'" %}
+
+<div
+  id="compare-tray"
+  class="compare-tray"
+  data-compare-settings="{{ include_in_compare }}"
+  data-compare-checkbox-text="{{ block.settings.compare-checkbox-text }}"
+>
+  <div class="compare-tray-container">
+    <div class="compare-tray-content">
+      <div id="compare-products" class="compare-products-list">
+        <!-- Compare products will be inserted here -->
+      </div>
+      <div class="compare-actions">
+        <button id="compare-button" class="compare-button" disabled>
+          {{ block.settings['compare-button-text'] }} (<span id="compare-count">0</span>)
+        </button>
+        <button id="compare-clear" class="compare-clear">{{ block.settings['compare-clear-button-text'] }}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<template id="compare-product-template">
+  <div class="compare-product">
+    <div class="compare-product-image-wrapper">
+      <img class="compare-product-image" src="product-image" alt="" width="120" height="120">
+      <button class="remove-compare">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 4L4 12M4 4L12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</template>
+
+{% schema %}
+{
+  "name": "t:compare_bar.name",
+  "target": "head",
+  "javascript": "compare-tray.js",
+  "settings": [
+    {
+      "label": "compare-button-text",
+      "id": "compare-button-text",
+      "type": "text",
+      "default": "Compare"
+    },
+    {
+      "label": "compare-clear-button-text",
+      "id": "compare-clear-button-text",
+      "type": "text",
+      "default": "Clear All"
+    },
+    {
+      "label": "compare-checkbox-text",
+      "id": "compare-checkbox-text",
+      "type": "text",
+      "default": "Compare"
+    }
+  ]
+}
+{% endschema %}
