@@ -1,0 +1,316 @@
+{
+  "list": {
+    "title": "Pedidos de Suscripción",
+    "new-request": "Crear nueva Suscripción",
+    "total-orders": "Total de Suscripciones",
+    "filter": {
+      "order-number": "Número de Pedido",
+      "order-number-placeholder": "Número de Pedido",
+      "order-name": "Nombre del Pedido",
+      "order-name-placeholder": "Nombre del Pedido",
+      "status": "Estado",
+      "status-placeholder": "Estado",
+      "status-options": {
+        "active": "Activo",
+        "paused": "Pausado",
+        "cancelled": "Cancelado",
+        "pending": "Pendiente",
+        "completed": "Completado",
+        "declined": "Rechazado"
+      },
+      "order-total": "Total del Pedido",
+      "order-total-placeholder": "Total del Pedido",
+      "next-delivery-date": "Próxima Fecha de Entrega",
+      "next-delivery-date-placeholder": "Próxima Fecha de Entrega",
+      "approved-by": "Aprobado Por",
+      "approved-by-placeholder": "Aprobado Por"
+    },
+    "table": {
+      "no-data": "No se encontraron pedidos de suscripción",
+      "details": "Detalles",
+      "order-number": "Número de Pedido",
+      "order-name": "Nombre del Pedido",
+      "status": "Estado",
+      "order-total": "Total del Pedido",
+      "frequency": "Frecuencia",
+      "next-delivery-date": "Próxima Fecha de Entrega",
+      "approved-by": "Aprobado Por",
+      "frequency-options": {
+        "daily": "Diario",
+        "weekly": "Semanal",
+        "monthly": "Mensual",
+        "quarterly": "Trimestral",
+        "biannual": "Semestral",
+        "annually": "Anual",
+        "days": "Días",
+        "weeks": "Semanas",
+        "months": "Meses",
+        "years": "Años"
+      },
+      "expand": {
+        "delivery-order-date": "Fecha del Pedido de Entrega",
+        "total-delivery-items": "Total de Artículos de Entrega",
+        "order-total": "Total del Pedido",
+        "table": {
+          "title": "Productos",
+          "customer-product": "Producto del Cliente",
+          "sku": "SKU",
+          "item": "Artículo",
+          "qty": "Cantidad",
+          "subtotal": "Subtotal"
+        },
+        "actions": {
+          "details": "Detalles",
+          "edit": "Editar",
+          "delete": "Eliminar",
+          "skip-delivery": "Omitir esta Entrega"
+        }
+      }
+    }
+  },
+  "create": {
+    "title": "Crear Suscripción",
+    "form": {
+      "section": {
+        "subscription-settings": "Configuración de Suscripción",
+        "company-account": "Cuenta de Empresa",
+        "shipping": "Envío",
+        "payment": "Pago"
+      },
+      "load-more": "Cargar Más",
+      "name": "Nombre del Pedido de Suscripción",
+      "name-placeholder": "Ingrese el Nombre de la Suscripción",
+      "name-required": "El nombre del pedido de suscripción es requerido",
+      "po-number": "Número de Orden de Compra",
+      "po-number-placeholder": "Ingrese el Número de Orden de Compra",
+      "start-delivery-date": "Fecha de Inicio de Entrega",
+      "start-delivery-date-placeholder": "Seleccione una Fecha",
+      "start-delivery-date-required": "La fecha de inicio de entrega es requerida",
+      "end-delivery-date": "Fecha de Fin de Entrega",
+      "end-delivery-date-placeholder": "Seleccione una Fecha",
+      "end-delivery-date-required": "La fecha de fin de entrega es requerida",
+      "end-delivery-date-invalid": "La fecha de fin de entrega debe ser posterior a la fecha de inicio",
+      "end-delivery-date-max": "La fecha de fin de entrega debe ser menor o igual a {{max}}",
+      "frequency": "Frecuencia",
+      "frequency-placeholder": "Elija la Frecuencia",
+      "frequency-required": "La frecuencia es requerida",
+      "custom-frequency-number": "Número de Frecuencia Personalizada",
+      "custom-frequency-number-placeholder": "Ingrese el Número de Frecuencia Personalizada",
+      "custom-frequency-number-required": "El número de frecuencia personalizada es requerido",
+      "custom-frequency-unit": "Unidad de Frecuencia Personalizada",
+      "custom-frequency-unit-placeholder": "Elija la Frecuencia Personalizada",
+      "custom-frequency-unit-required": "La unidad de frecuencia personalizada es requerida",
+      "customer-account": "Cuenta del Cliente",
+      "customer-account-placeholder": "Elija la Cuenta",
+      "customer-account-required": "La cuenta del cliente es requerida",
+      "shipping-method": "Método de Envío",
+      "shipping-method-placeholder": "Elija el Método de Envío",
+      "shipping-method-required": "El método de envío es requerido",
+      "shipping-address": "Dirección de Envío",
+      "payment-method": "Método de Pago",
+      "payment-method-placeholder": "Elija el Método de Pago",
+      "payment-method-required": "El método de pago es requerido",
+      "actions": {
+        "back-to-subscription-orders-list": "Cancelar",
+        "create": "Crear"
+      },
+      "toast": {
+        "submit-warning": "Por favor agregue al menos un producto",
+        "submit-error": "Error al enviar, por favor verifique los artículos y la cantidad",
+        "submit-success": "El Pedido de Suscripción ha sido guardado",
+        "create-subscription-order-error": "Error al crear el pedido de suscripción",
+        "create-subscription-order-success": "Pedido de suscripción creado exitosamente",
+        "no-subscription-order-id": "No hay ID de pedido de suscripción"
+      },
+      "shipping-method-modal": {
+        "title": "Elegir Método de Envío",
+        "confirm": "Confirmar",
+        "cancel": "Cancelar",
+        "required": "El método de envío es requerido",
+        "no-shipping-methods": "No se encontraron métodos de envío"
+      },
+      "frequency-options": {
+        "daily": "Diario",
+        "weekly": "Semanal",
+        "monthly": "Mensual",
+        "quarterly": "Trimestral",
+        "biannual": "Semestral",
+        "annually": "Anual",
+        "custom": "Personalizado",
+        "day": "Día",
+        "week": "Semana",
+        "month": "Mes",
+        "year": "Año"
+      }
+    }
+  },
+  "edit": {
+    "title": "Editar Suscripción",
+    "error": {
+      "no-order-data": "No se encontraron datos del pedido de suscripción"
+    },
+    "form": {
+      "actions": {
+        "update": "Actualizar"
+      },
+      "toast": {
+        "update-subscription-order-error": "Error al actualizar el pedido de suscripción",
+        "update-subscription-order-success": "Pedido de suscripción actualizado exitosamente"
+      }
+    }
+  },
+  "detail": {
+    "header": {
+      "title": "Detalles de la Suscripción"
+    },
+    "information-card": {
+      "order-number": "Pedidos de Suscripción de Oficina Central",
+      "title": "Suscripción #{{number}}",
+      "company-account": "Cuenta de Empresa",
+      "order-date": "Fecha del Pedido",
+      "start-delivery-date": "Fecha de Inicio de Entrega",
+      "next-delivery-date": "Próxima Fecha de Entrega",
+      "end-delivery-date": "Fecha de Fin de Entrega",
+      "frequency": "Frecuencia",
+      "ordered-by": "Ordenado por",
+      "contact-email": "Correo Electrónico del Contacto",
+      "po-number": "Número de Orden de Compra",
+      "payment-terms": "Términos de Pago",
+      "billing-address": "Dirección de Facturación",
+      "shipping-method": "Método de Envío",
+      "ship-to": "Enviar a",
+      "summary": "Resumen",
+      "item-count": "Cantidad de Artículos",
+      "subtotal": "Subtotal",
+      "tax": "Impuesto",
+      "shipping": "Envío",
+      "total": "Total",
+      "buttons": {
+        "skip-delivery": "Omitir esta Entrega",
+        "edit": "Editar",
+        "pause": "Pause",
+        "resume": "Reanudar",
+        "approve": "Aprobar",
+        "decline": "Rechazar",
+        "cancel": "Cancelar",
+        "delete": "Eliminar"
+      },
+      "product-table": {
+        "title": "Productos",
+        "header": {
+          "product": "Producto",
+          "sku": "SKU",
+          "quantity": "Cantidad",
+          "price": "Precio",
+          "total": "Total"
+        }
+      },
+      "no-subscription-found": "No se encontraron suscripciones"
+    }
+  },
+  "recommend-for-you": {
+    "title": {
+      "black": "Recomendado",
+      "white": "Para Ti"
+    },
+    "product-card": {
+      "inventory": "Inventario",
+      "list-price": "Precio de Lista",
+      "your-price": "Tu Precio",
+      "customer-partner-number": "Número de Socio del Cliente",
+      "sku": "SKU",
+      "subscribe-now": "Suscríbete Ahora",
+      "new": "Nuevo"
+    },
+    "toast": {
+      "add-success": "Los productos recomendados han sido agregados al pedido de suscripción",
+      "product-not-found-at-this-location": "Producto no encontrado en esta ubicación"
+    }
+  },
+  "common-actions": {
+    "delete": {
+      "dialog": {
+        "title": "Eliminar Suscripción",
+        "description": "¿Está seguro de que desea eliminar esta suscripción?",
+        "confirm": "Confirmar",
+        "cancel": "Cancelar"
+      },
+      "toast": {
+        "success": "Suscripción eliminada exitosamente",
+        "error": "Error al eliminar la suscripción"
+      }
+    },
+    "skip-delivery": {
+      "dialog": {
+        "title": "Omitir Entrega",
+        "description": "¿Está seguro de que desea omitir esta entrega?",
+        "confirm": "Confirmar",
+        "cancel": "Cancelar"
+      },
+      "toast": {
+        "success": "Entrega omitida exitosamente",
+        "error": "Error al omitir la entrega"
+      }
+    },
+    "pause": {
+      "dialog": {
+        "title": "Pausar Suscripción",
+        "description": "¿Está seguro de que desea pausar esta suscripción?",
+        "confirm": "Confirmar",
+        "cancel": "Cancelar"
+      },
+      "toast": {
+        "success": "Suscripción pausada exitosamente",
+        "error": "Error al pausar la suscripción"
+      }
+    },
+    "resume": {
+      "dialog": {
+        "title": "Reanudar Suscripción",
+        "description": "¿Está seguro de que desea reanudar esta suscripción?",
+        "confirm": "Confirmar",
+        "cancel": "Cancelar"
+      },
+      "toast": {
+        "success": "Suscripción reanudada exitosamente",
+        "error": "Error al reanudar la suscripción"
+      }
+    },
+    "approve": {
+      "dialog": {
+        "title": "Aprobar Suscripción",
+        "description": "¿Está seguro de que desea aprobar esta suscripción?",
+        "confirm": "Confirmar",
+        "cancel": "Cancelar"
+      },
+      "toast": {
+        "success": "Suscripción aprobada exitosamente",
+        "error": "Error al aprobar la suscripción"
+      }
+    },
+    "decline": {
+      "dialog": {
+        "title": "Rechazar Suscripción",
+        "description": "¿Está seguro de que desea rechazar esta suscripción?",
+        "confirm": "Confirmar",
+        "cancel": "Cancelar"
+      },
+      "toast": {
+        "success": "Suscripción rechazada exitosamente",
+        "error": "Error al rechazar la suscripción"
+      }
+    }
+  },
+  "delivery-history": {
+    "list": {
+      "title": "Historial de Entregas",
+      "total-deliveries": "Total de Entregas",
+      "filter": {
+        "name": "Número de Pedido",
+        "name-placeholder": "Número de Pedido",
+        "delivery-date": "Fecha de Entrega",
+        "delivery-date-placeholder": "Fecha de Entrega"
+      }
+    }
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "list": {
+    "title": "Cotizaciones",
+    "total-orders": "Cotizaciones",
+    "new-request": "Crear Nueva Cotización",
+    "filter": {
+      "id": "Cotización#",
+      "id-placeholder": "Cotización#",
+      "status": "Estado",
+      "status-placeholder": "Estado",
+      "status-options": {
+        "submitted": "Enviado",
+        "approved": "Aprobado",
+        "ordered": "Ordenado",
+        "declined": "Declinado",
+        "cancelled": "Cancelado",
+        "requested": "Solicitado",
+        "expired": "Expirado"
+      },
+      "po-number": "Número de PO",
+      "po-number-placeholder": "Número de PO",
+      "created-at": "Creado en o después de",
+      "created-at-placeholder": "Creado en o después de",
+      "expiration-date": "Válido hasta",
+      "expiration-date-placeholder": "Válido hasta",
+      "owner": "Propietario",
+      "owner-placeholder": "Propietario"
+    },
+    "table": {
+      "id": "Cotización#",
+      "status": "Estado",
+      "po-number": "Número de PO",
+      "created-at": "Fecha de Creación",
+      "expiration-date": "Válido Hasta",
+      "owner": "Propietario",
+      "details": "Detalles",
+      "no-quotes-found": "No hay cotizaciones encontradas"
+    }
+  },
+  "create": {
+    "title": "Solicitud de Cotización",
+    "back-to-request-for-quote-list": "Volver",
+    "create": "Crear",
+    "success": "La Solicitud de Cotización ha sido guardada",
+    "form": {
+      "notes-required": "El campo de notas es requerido",
+      "notes": "Notas",
+      "notes-placeholder": "Ingrese notas",
+      "po-number-required": "Número de PO es requerido",
+      "po-number": "Número de PO",
+      "po-number-placeholder": "Ingrese número de PO",
+      "expiration-date-required": "Válido Hasta es requerido",
+      "expiration-date": "Válido Hasta",
+      "expiration-date-placeholder": "Seleccione Válido Hasta",
+      "information": "Información",
+      "first-name": "Nombre",
+      "last-name": "Apellido",
+      "email-address": "Correo Electrónico",
+      "phone-number": "Teléfono",
+      "company": "Cuenta de Empresa",
+      "product-id-required": "ID de Producto es requerido",
+      "variant-id-required": "ID de Variante es requerido",
+      "quantity-required": "Cantidad es requerida",
+      "original-price-required": "Precio Original es requerido",
+      "offer-price-required": "Precio de Oferta es requerido",
+      "offer-price-invalid": "Precio de Oferta es inválido",
+      "currency-code-required": "Código de Moneda es requerido",
+      "invalid-quantity": "Cantidad inválida",
+      "submit-error-description": "Envío fallido, por favor revisa los artículos y la cantidad",
+      "submit-warning": "Por favor, añade al menos un producto"
+    },
+    "table": {
+      "title": "Productos",
+      "product": "Producto",
+      "qty": "Cantidad",
+      "uom": "UOM",
+      "listed-price": "Precio Listado",
+      "target-price": "Precio Objetivo",
+      "target-price-placeholder": "Precio"
+    }
+  },
+  "detail": {
+    "title": "Cotización",
+    "title-with-id": "Cotización #{{id}} Detalles",
+    "information": {
+      "title": "Información",
+      "created-at": "Fecha de Creación",
+      "valid-until": "Válido Hasta",
+      "first-name": "Nombre",
+      "last-name": "Apellido",
+      "email-address": "Correo Electrónico",
+      "phone-number": "Teléfono",
+      "company-account": "Cuenta de Empresa",
+      "notes": "Notas",
+      "po-number": "Número de PO",
+      "expiration-date": "Válido Hasta",
+      "buttons": {
+        "print": "Imprimir RFQ",
+        "cancel": "Cancelar",
+        "delete": "Eliminar"
+      }
+    },
+    "table": {
+      "title": "Productos",
+      "customer-product": "Producto de Cliente",
+      "sku": "SKU",
+      "item": "Artículo",
+      "qty": "Cantidad a Ordenar",
+      "uom": "UOM",
+      "target-price": "Precio Objetivo",
+      "listed-price": "Precio Listado",
+      "total-price": "Precio Total",
+      "add-product-button": "Agregar Producto",
+      "empty-product-table": "No hay productos en esta cotización"
+    },
+    "form": {
+      "submit-error": "Error al actualizar la cotización, por favor revisa el formulario"
+    },
+    "action-card": {
+      "item-count": "Cantidad de Artículos",
+      "subtotal": "Subtotal",
+      "total": "Total",
+      "notice": "Impuestos, descuentos y envío calculados en el checkout.",
+      "buttons": {
+        "submit": "Enviar",
+        "resubmit": "Re-Enviar Solicitud",
+        "convert": "Convertir Cotización a Pedido"
+      },
+      "submit-action": {
+        "min-quantity": "{{productTitle}} cantidad mínima es {{minQuantity}}",
+        "max-quantity": "{{productTitle}} cantidad máxima es {{maxQuantity}}",
+        "out-of-stock": "{{productTitle}} está fuera de stock cantidad máxima {{maxQuantity}}",
+        "update-success": "Cotización actualizada con éxito",
+        "update-error": "Error al actualizar la cotización",
+        "increment-quantity": "{{productTitle}} cantidad debe ser un múltiplo de {{increment}}"
+      }
+    },
+    "dialog": {
+      "cancel-quote": {
+        "title": "Cancelar Cotización",
+        "description": "¿Estás seguro de que deseas cancelar esta cotización? Por favor, proporciona una razón para la cancelación.",
+        "placeholder": "Introduce una razón de cancelación (máximo 500 caracteres)",
+        "character-count": "{{count}}/500 caracteres",
+        "confirm-button": "Confirmar",
+        "cancel-button": "Cancelar",
+        "success": "Cotización cancelada con éxito"
+      },
+      "delete-quote": {
+        "title": "Eliminar Cotización",
+        "description": "¿Estás seguro de que deseas eliminar esta cotización? Esta acción no se puede deshacer.",
+        "placeholder": "Introduce una razón de eliminación (máximo 500 caracteres)",
+        "confirm": "Sí, Eliminar",
+        "cancel": "Cancelar",
+        "success": "Cotización eliminada con éxito",
+        "confirm-button": "Eliminar Cotización",
+        "cancel-button": "Cancelar"
+      },
+      "convert-quote": {
+        "title": "Convertir Cotización a Pedido",
+        "description": "¿Estás seguro de que deseas convertir esta cotización a pedido?",
+        "placeholder": "Introduce una razón de conversión (máximo 500 caracteres)",
+        "confirm": "Sí, Convertir",
+        "cancel": "Cancelar",
+        "success": "Cotización convertida a pedido con éxito",
+        "confirm-button": "Convertir Cotización a Pedido",
+        "cancel-button": "Cancelar"
+      },
+      "delete-item": {
+        "title": "Eliminar Artículo",
+        "description": "¿Estás seguro de que deseas eliminar este artículo?",
+        "confirm": "Sí, Eliminar",
+        "cancel": "Cancelar",
+        "success": "Artículo eliminado con éxito"
+      },
+      "add-product": {
+        "title": "Agregar Producto",
+        "description": "Agregar un producto a la cotización",
+        "confirm": "Agregar",
+        "cancel": "Cancelar"
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "list": {
+    "filter": {
+      "name": "Nombre",
+      "name-placeholder": "Nombre",
+      "matchType": "contiene"
+    },
+    "table": {
+      "account-name": "Nombre de la Cuenta",
+      "company-address": "Dirección de la Empresa",
+      "city": "Ciudad",
+      "state": "Estado",
+      "zip": "Código Postal",
+      "country": "País",
+      "actions": "Acciones",
+      "title": "Enviar a Ubicaciones",
+      "no-locations-found": "No hay ubicaciones de la empresa.",
+      "role": "Rol",
+      "select-role": "Selecciona un Rol",
+      "Admin": "Administración",
+      "Ordering Only": "Sólo para pedidos",
+      "Order Approver": "Aprobación de la orden"
+    }
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "list": {
+    "filter": {
+      "name": "Shopping List Name",
+      "name-placeholder": "Shopping List Name",
+      "is-default": "Is Default",
+      "is-default-placeholder": "Is Default"
+    },
+    "no-lists-found": "No shopping lists found",
+    "delete-success": "Delete successful",
+    "delete-success-description": "The shopping list has been deleted",
+    "delete-failed": "Delete failed",
+    "delete-failed-description": "Please try again later",
+    "set-default-success": "Set as default successful",
+    "set-default-success-description": "The shopping list has been set as default",
+    "set-default-failed": "Set as default failed",
+    "set-default-failed-description": "Please try again later",
+    "confirm-delete-title": "Confirm Delete",
+    "confirm-delete-description-single": "Are you sure you want to delete this shopping list?",
+    "confirm-delete-description-batch": "Are you sure you want to delete the selected {{count}} shopping lists?",
+    "confirm-delete-ok-button": "Delete",
+    "title": "Shopping Lists",
+    "create-new-list": "Create new list",
+    "total": "Total Shopping Lists",
+    "actions": {
+      "edit": "Edit",
+      "edit-dialog-title": "Edit shopping list",
+      "delete": "Delete",
+      "set-as-default": "Set as default"
+    },
+    "table": {
+      "name": "Name",
+      "subtotal": "Subtotal",
+      "items": "Items",
+      "default": "Default",
+      "created-at": "Created at",
+      "updated-at": "Updated at",
+      "no-lists-found": "No shopping lists found"
+    },
+    "card": {
+      "name": "Name",
+      "subtotal": "Subtotal",
+      "items": "Items",
+      "created-at": "Created at",
+      "updated-at": "Updated at"
+    }
+  },
+  "detail": {
+    "filter": {
+      "product-name": "Product Name",
+      "product-name-placeholder": "Product Name",
+      "sku-id": "SKU ID",
+      "sku-id-placeholder": "SKU ID",
+      "customer-product": "Customer product",
+      "customer-product-placeholder": "Customer product"
+    },
+    "total-items": "Total Items",
+    "get-items-failed": "Get shopping list items failed",
+    "update-quantity-success": "Update {{productName}} quantity successfully",
+    "update-quantity-failed": "Update {{productName}} quantity failed",
+    "remove-items-success": "Remove items successfully",
+    "remove-items-failed": "Remove items failed",
+    "no-items-found": "No items found",
+    "confirm-delete-items-title": "Confirm Delete",
+    "confirm-delete-items-description": "Are you sure you want to delete the selected {{count}} {{itemText}}?",
+    "delete-success": "Delete successful",
+    "delete-success-description": "The shopping list has been deleted",
+    "delete-failed": "Delete failed",
+    "delete-failed-description": "Please try again later",
+    "set-default-success": "Set as default successful",
+    "set-default-success-description": "The shopping list has been set as default",
+    "set-default-failed": "Set as default failed",
+    "set-default-failed-description": "Please try again later",
+    "confirm-delete-list-title": "Confirm Delete",
+    "confirm-delete-list-description": "Are you sure you want to delete this shopping list?",
+    "confirm-delete-list-ok-button": "Delete",
+    "product-table": {
+      "customer-product": "Customer product",
+      "item": "Item",
+      "qty": "Qty",
+      "price": "Price",
+      "subtotal": "Subtotal",
+      "empty": "Your shopping list is empty",
+      "sku": "SKU"
+    },
+    "table-actions": {
+      "delete": "Delete",
+      "move": "Move to another Shopping list",
+      "create-and-add": "Create and Add",
+      "request-for-quote": "Request for Quote"
+    },
+    "actions": {
+      "selected": "Selected",
+      "add-to-cart": "Add to Cart",
+      "add-to-cart-success": "Add {{count}} items to cart success",
+      "add-to-cart-success-description": "Add to cart success",
+      "view-cart": "View cart",
+      "add-to-cart-error": "Add to cart failed, {{error}}"
+    }
+  },
+  "add-to-list": {
+    "add-to-shopping-list-button": "Add to List",
+    "add-to-shopping-list-button-create-and-add": "Create and Add"
+  },
+  "dialog": {
+    "add-to-shopping-list-title": "Add to Shopping List",
+    "add-to-shopping-list-description": "Add to shopping list",
+    "add-to-shopping-list-success": "Added to shopping list successfully",
+    "move-to-shopping-list-success": "Products have been successfully moved to your selected shopping list.",
+    "add-to-shopping-list-create-new-list": "Create New List",
+    "add-to-shopping-list-button": "Save",
+    "add-to-shopping-list-cancel-button": "Cancel",
+    "create-shopping-list-dialog-title": "Create New Shopping List",
+    "create-shopping-list-dialog-description": "Create a new shopping list",
+    "create-shopping-list-dialog-button-create": "Create",
+    "create-shopping-list-dialog-button-update": "Update",
+    "create-shopping-list-dialog-cancel-button": "Cancel",
+    "create-shopping-list-success-1": "The shopping list",
+    "create-shopping-list-success-2": "was successfully created",
+    "create-shopping-list-success-3": "was successfully updated",
+    "shopping-list-form-title": "Shopping List",
+    "shopping-list-name-required": "Shopping list name is required",
+    "shopping-list-name-placeholder": "Shopping list name",
+    "shopping-list-name-length": "Shopping list name must be between 3 and 50 characters",
+    "shopping-list-name-max-length": "Shopping list name must be less than 255 characters",
+    "shopping-list-form-name-label": "Shopping List Name",
+    "shopping-list-form-name-placeholder": "Enter name",
+    "shopping-list-form-description-label": "List Description",
+    "shopping-list-form-description-placeholder": "Enter some description...",
+    "shopping-list-form-is-default-label": "Set as default",
+    "shopping-list-form-is-default-placeholder": "Set as default",
+    "shopping-list-form-submit-button": "Save",
+    "shopping-list-form-cancel-button": "Cancel"
+  }
+}

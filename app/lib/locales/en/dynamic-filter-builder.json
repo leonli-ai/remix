@@ -1,0 +1,15 @@
+{
+  "header": {
+    "filters": "Filters",
+    "clear-all": "Clear all",
+    "selected-filters": "Selected filters",
+    "apply-filters": "Apply filters",
+    "apply": "Apply",
+    "match-type": {
+      "contains": "contains",
+      "exact": "exact",
+      "on-or-after": "on or after",
+      "": ""
+    }
+  }
+}

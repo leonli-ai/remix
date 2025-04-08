@@ -1,0 +1,135 @@
+{
+  "list": {
+    "filter": {
+      "name": "Nombre de la Lista de Compras",
+      "name-placeholder": "Nombre de la Lista de Compras",
+      "is-default": "Es Predeterminado",
+      "is-default-placeholder": "Es Predeterminado"
+    },
+    "no-lists-found": "No se encontraron listas de compras",
+    "delete-success": "Eliminación exitosa",
+    "delete-success-description": "La lista de compras ha sido eliminada",
+    "delete-failed": "Error al eliminar",
+    "delete-failed-description": "Por favor, inténtalo de nuevo más tarde",
+    "set-default-success": "Establecido como predeterminado con éxito",
+    "set-default-success-description": "La lista de compras ha sido establecida como predeterminada",
+    "set-default-failed": "Error al establecer como predeterminado",
+    "set-default-failed-description": "Por favor, inténtalo de nuevo más tarde",
+    "confirm-delete-title": "Confirmar Eliminación",
+    "confirm-delete-description-single": "¿Estás seguro de que deseas eliminar esta lista de compras?",
+    "confirm-delete-description-batch": "¿Estás seguro de que deseas eliminar las {{count}} listas de compras seleccionadas?",
+    "confirm-delete-ok-button": "Eliminar",
+    "title": "Listas de Compras",
+    "create-new-list": "Crear nueva lista",
+    "total": "Total de Listas de Compras",
+    "actions": {
+      "edit": "Editar",
+      "edit-dialog-title": "Editar lista de compras",
+      "delete": "Eliminar",
+      "set-as-default": "Establecer como predeterminado"
+    },
+    "table": {
+      "name": "Nombre",
+      "subtotal": "Subtotal",
+      "items": "Artículos",
+      "default": "Predeterminado",
+      "created-at": "Creado en",
+      "updated-at": "Actualizado en",
+      "no-lists-found": "No se encontraron listas de compras"
+    },
+    "card": {
+      "name": "Nombre",
+      "subtotal": "Subtotal",
+      "items": "Artículos",
+      "created-at": "Creado en",
+      "updated-at": "Actualizado en"
+    }
+  },
+  "detail": {
+    "filter": {
+      "product-name": "Nombre del Producto",
+      "product-name-placeholder": "Nombre del Producto",
+      "sku-id": "ID de SKU",
+      "sku-id-placeholder": "ID de SKU",
+      "customer-product": "Producto del Cliente",
+      "customer-product-placeholder": "Producto del Cliente"
+    },
+    "total-items": "Total de Artículos",
+    "get-items-failed": "Error al obtener los artículos de la lista de compras",
+    "update-quantity-success": "Cantidad de {{productName}} actualizada con éxito",
+    "update-quantity-failed": "Error al actualizar la cantidad de {{productName}}",
+    "remove-items-success": "Artículos eliminados con éxito",
+    "remove-items-failed": "Error al eliminar artículos",
+    "no-items-found": "No se encontraron artículos",
+    "confirm-delete-items-title": "Confirmar Eliminación",
+    "confirm-delete-items-description": "¿Estás seguro de que deseas eliminar los {{count}} {{itemText}} seleccionados?",
+    "delete-success": "Eliminación exitosa",
+    "delete-success-description": "La lista de compras ha sido eliminada",
+    "delete-failed": "Error al eliminar",
+    "delete-failed-description": "Por favor, inténtalo de nuevo más tarde",
+    "set-default-success": "Establecido como predeterminado con éxito",
+    "set-default-success-description": "La lista de compras ha sido establecida como predeterminada",
+    "set-default-failed": "Error al establecer como predeterminado",
+    "set-default-failed-description": "Por favor, inténtalo de nuevo más tarde",
+    "confirm-delete-list-title": "Confirmar Eliminación",
+    "confirm-delete-list-description": "¿Estás seguro de que deseas eliminar esta lista de compras?",
+    "confirm-delete-list-ok-button": "Eliminar",
+    "product-table": {
+      "customer-product": "Producto del Cliente",
+      "item": "Artículo",
+      "qty": "Cantidad",
+      "price": "Precio",
+      "subtotal": "Subtotal",
+      "empty": "Tu lista de compras está vacía",
+      "sku": "SKU"
+    },
+    "table-actions": {
+      "delete": "Eliminar",
+      "move": "Mover a otra lista de compras",
+      "create-and-add": "Crear y Añadir",
+      "request-for-quote": "Solicitud de Cotización"
+    },
+    "actions": {
+      "selected": "Seleccionado",
+      "add-to-cart": "Añadir al Carrito",
+      "add-to-cart-success": "Añadir {{count}} artículos al carrito con éxito",
+      "add-to-cart-success-description": "Añadir al carrito con éxito",
+      "view-cart": "Ver carrito",
+      "add-to-cart-error": "Error al añadir al carrito, {{error}}"
+    }
+  },
+  "add-to-list": {
+    "add-to-shopping-list-button": "Añadir a la Lista",
+    "add-to-shopping-list-button-create-and-add": "Crear y Añadir"
+  },
+  "dialog": {
+    "add-to-shopping-list-title": "Añadir a la Lista de Compras",
+    "add-to-shopping-list-description": "Añadir a la lista de compras",
+    "add-to-shopping-list-success": "Añadido a la lista de compras con éxito",
+    "move-to-shopping-list-success": "Los productos se han movido con éxito a su lista de compras seleccionada.",
+    "add-to-shopping-list-create-new-list": "Crear Nueva Lista",
+    "add-to-shopping-list-button": "Guardar",
+    "add-to-shopping-list-cancel-button": "Cancelar",
+    "create-shopping-list-dialog-title": "Crear Nueva Lista de Compras",
+    "create-shopping-list-dialog-description": "Crear una nueva lista de compras",
+    "create-shopping-list-dialog-button-create": "Crear",
+    "create-shopping-list-dialog-button-update": "Actualizar",
+    "create-shopping-list-dialog-cancel-button": "Cancelar",
+    "create-shopping-list-success-1": "La lista de compras",
+    "create-shopping-list-success-2": "fue creado con éxito",
+    "create-shopping-list-success-3": "se ha actualizado con éxito",
+    "shopping-list-form-title": "Lista de Compras",
+    "shopping-list-name-required": "El nombre de la lista de compras es requerido",
+    "shopping-list-name-placeholder": "Nombre de la lista de compras",
+    "shopping-list-name-length": "El nombre de la lista de compras debe tener entre 3 y 50 caracteres",
+    "shopping-list-name-max-length": "El nombre de la lista de compras debe ser menor que 255 caracteres",
+    "shopping-list-form-name-label": "Nombre de la Lista de Compras",
+    "shopping-list-form-name-placeholder": "Introduce el nombre",
+    "shopping-list-form-description-label": "Descripción de la Lista",
+    "shopping-list-form-description-placeholder": "Introduce una descripción...",
+    "shopping-list-form-is-default-label": "Establecer como predeterminado",
+    "shopping-list-form-is-default-placeholder": "Establecer como predeterminado",
+    "shopping-list-form-submit-button": "Guardar",
+    "shopping-list-form-cancel-button": "Cancelar"
+  }
+}

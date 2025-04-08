@@ -1,0 +1,45 @@
+{
+  "title": "Request for a Quote",
+  "resubmit-title": "Resubmit Quote",
+  "back": "Back",
+  "information": "Information",
+  "notes": "Notes",
+  "notes-placeholder": "Enter notes",
+  "po-number": "PO Number",
+  "po-number-placeholder": "Enter PO Number",
+  "expiration-date": "Valid Until",
+  "expiration-date-placeholder": "Select Valid Until",
+  "products": "Products",
+  "table": {
+    "product": "Product",
+    "qty": "Qty",
+    "uom": "UOM",
+    "target-price": "Target Price",
+    "listed-price": "Listed Price"
+  },
+  "add-more-products": "Add more products",
+  "clean-all": "Clean all",
+  "submit-request": "Submit Quote",
+  "quote-created-success": "Quote created successfully",
+  "customer": {
+    "label": "Customer",
+    "placeholder": "Search for a customer",
+    "location-label": "Location",
+    "location-placeholder": "Search for a location",
+    "first-name": "First Name",
+    "last-name": "Last Name",
+    "email-address": "Email Address",
+    "phone-number": "Phone Number",
+    "company-name": "Company Name",
+    "company-account": "Company Account"
+  },
+  "errors": {
+    "customer-required": "Customer selection is required",
+    "location-required": "Location selection is required",
+    "product-required": "Product is required",
+    "no-products": "At least one product is required",
+    "notes-required": "Notes is required",
+    "po-number-required": "PO Number is required",
+    "expiration-date-required": "Valid Until is required"
+  }
+}

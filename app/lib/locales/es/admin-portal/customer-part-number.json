@@ -1,0 +1,51 @@
+{
+  "empty-search-result": {
+    "title": "No se encontraron números de parte de clientes",
+    "description": "Intenta cambiar el término de búsqueda"
+  },
+  "table": {
+    "customer-part-number": "Número de Parte de Cliente",
+    "product-name": "Nombre del Producto",
+    "sku-id": "ID de SKU",
+    "company-id": "ID de Empresa",
+    "company-name": "Nombre de la Empresa",
+    "actions": "Acciones"
+  },
+  "pagination": {
+    "total-records": "Total de {{count}} registros"
+  },
+  "delete": {
+    "trigger": "Delete",
+    "bulk-delete-trigger": "Eliminar en Masa",
+    "title": "Eliminar Número de Parte de Cliente",
+    "description": "¿Estás seguro de que deseas eliminar este Número de Parte de Cliente?",
+    "confirm": "Sí, Eliminar",
+    "cancel": "Cancelar"
+  },
+  "import": {
+    "trigger": "Importar archivo",
+    "title": "Validación de Importación",
+    "upload-file-error": "Tipo de archivo inválido. Por favor, sube un archivo .CSV o .XLSX.",
+    "success-count": "Los datos se importaron con éxito, y por favor verifica los que tienen error.",
+    "message": "Mensaje",
+    "row": "Fila"
+  },
+  "download": {
+    "trigger": "Descargar Plantilla",
+    "title": "Descargar Plantilla",
+    "company-placeholder": "Seleccionar Empresa",
+    "format-placeholder": "Seleccionar Formato"
+  },
+  "filter": {
+    "sku-id": "ID de SKU",
+    "sku-id-placeholder": "ID de SKU",
+    "customer-part-number": "Número de Parte de Cliente",
+    "customer-part-number-placeholder": "Número de Parte de Cliente",
+    "product-name": "Nombre del Producto",
+    "product-name-placeholder": "Nombre del Producto",
+    "company-id": "ID de Empresa",
+    "company-id-placeholder": "ID de Empresa"
+  },
+  "add-customer-part-number-success": "Número de parte de cliente añadido con éxito",
+  "delete-customer-part-number-success": "Número de parte de cliente eliminado con éxito"
+}

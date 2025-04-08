@@ -1,0 +1,21 @@
+{
+  "home": "Inicio",
+  "users": "Usuarios",
+  "customer": "Usuarios",
+  "company-management": "Gestión de la Empresa",
+  "quick-order": "Pedido Rápido",
+  "shopping-lists": "Listas de Compras",
+  "orders-pending-approval": "Pedidos Pendientes de Aprobación",
+  "order-history": "Historial de Pedidos",
+  "order-details": "Detalles del Pedido",
+  "compare": "Comparar",
+  "company-location": "Ubicación de la Empresa",
+  "ship-to-locations": "Enviar a Ubicaciones",
+  "request-for-quote": "Solicitud de Cotización",
+  "quotes": "Cotizaciones",
+  "quote-details": "Detalles de la Cotización",
+  "subscription-orders": "Pedidos de Suscripción",
+  "create-subscription": "Crear Suscripción",
+  "edit-subscription": "Editar Suscripción",
+  "order-subscription-details": "Detalles del Pedido de Suscripción"
+}

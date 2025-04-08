@@ -1,0 +1,109 @@
+{
+  "title": "Cotización #{{id}} Detalles",
+  "information": {
+    "title": "Información",
+    "created-at": "Fecha de Creación",
+    "expiration-date": "Válido hasta que",
+    "first-name": "Nombre",
+    "last-name": "Apellido",
+    "email-address": "Correo Electrónico",
+    "phone-number": "Teléfono",
+    "po-number": "Número de PO",
+    "company-name": "Nombre de la Empresa",
+    "company-account": "Cuenta de Empresa",
+    "notes": "Notas"
+  },
+  "products": {
+    "title": "Productos",
+    "columns": {
+      "customer-product": "Producto del Cliente",
+      "sku": "SKU",
+      "item": "Artículo",
+      "qty": "Cantidad a Ordenar",
+      "uom": "UOM",
+      "target-price": "Precio Objetivo",
+      "listed-price": "Precio de Lista",
+      "total-price": "Precio Total"
+    }
+  },
+  "order-summary": {
+    "item-count": "Cantidad de Artículos",
+    "items": "Artículos",
+    "item": "Artículo",
+    "subtotal": "Subtotal",
+    "taxes-notice": "Impuestos, descuentos y envío calculados en el checkout."
+  },
+  "buttons": {
+    "cancel": "Cancelar",
+    "update-item": "Guardar Actualizaciones",
+    "approve": "Aprobar",
+    "decline": "Rechazar",
+    "convert": "Convertir Cotización a Pedido",
+    "resubmit": "Re-Enviar Solicitud",
+    "delete": "Eliminar",
+    "back": "Atrás",
+    "add-more-products": "Agregar Más Productos"
+  },
+  "messages": {
+    "cancel-success": "Cotización cancelada con éxito.",
+    "cancel-error": "An error occurred. Please try again.",
+    "update-success": "Cotización actualizada con éxito.",
+    "update-error": "An error occurred. Please try again.",
+    "approve-success": "Cotización aprobada con éxito.",
+    "approve-error": "An error occurred. Please try again.",
+    "decline-success": "Cotización rechazada con éxito.",
+    "decline-error": "An error occurred. Please try again.",
+    "convert-success": "Cotización convertida a pedido con éxito.",
+    "convert-error": "An error occurred. Please try again.",
+    "delete-success": "Cotización eliminada con éxito.",
+    "delete-error": "An error occurred. Please try again."
+  },
+  "actionModal": {
+    "decline": {
+      "title": "Rechazar Cotización",
+      "message": "¿Estás seguro de que deseas rechazar esta cotización? Esta acción notificará al cliente y actualizará el estado de la cotización a 'Rechazado'.",
+      "reason-placeholder": "Introduce una razón de rechazo (máximo 500 caracteres)",
+      "reason-required": "Razón es requerida",
+      "confirm": "Confirmar",
+      "cancel": "Cancelar"
+    },
+    "convert": {
+      "title": "Convertir Cotización a Pedido",
+      "message": "¿Estás seguro de que deseas convertir esta cotización a pedido?",
+      "reason-placeholder": "Introduce una razón de conversión (máximo 500 caracteres)",
+      "reason-required": "Razón es requerida",
+      "confirm": "Confirmar",
+      "cancel": "Cancelar"
+    },
+    "delete": {
+      "title": "Eliminar Cotización",
+      "message": "¿Seguro que quieres eliminar esta cita? Esta acción no se puede deshacer.",
+      "reason-placeholder": "Introduce una razón de eliminación (máximo 500 caracteres)",
+      "reason-required": "Razón es requerida",
+      "confirm": "Confirmar",
+      "cancel": "Cancelar"
+    },
+    "approve": {
+      "title": "Aprobar Cotización",
+      "message": "¿Estás seguro de que deseas aprobar esta cotización?",
+      "reason-placeholder": "Introduce una razón de aprobación (máximo 500 caracteres)",
+      "reason-required": "Razón es requerida",
+      "confirm": "Confirmar",
+      "cancel": "Cancelar"
+    },
+    "cancel": {
+      "title": "Cancelar Cotización",
+      "message": "¿Estás seguro de que deseas cancelar esta cotización? Por favor, proporciona una razón para la cancelación.",
+      "reason-placeholder": "Introduce una razón de cancelación (máximo 500 caracteres)",
+      "reason-required": "Razón es requerida",
+      "confirm": "Confirmar",
+      "cancel": "Cancelar"
+    }
+  },
+  "errors": {
+    "validation-failed": "Por favor, corrige los errores antes de enviar.",
+    "product-required": "Producto es requerido",
+    "quantity-required": "Cantidad es requerida",
+    "price-required": "Precio es requerido"
+  }
+}

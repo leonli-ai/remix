@@ -1,0 +1,183 @@
+{
+  "list": {
+    "title": "Quotes",
+    "total-orders": "Quotes",
+    "new-request": "Create New Quote",
+    "filter": {
+      "id": "Quote#",
+      "id-placeholder": "Quote#",
+      "status": "Status",
+      "status-placeholder": "Status",
+      "status-options": {
+        "submitted": "Submitted",
+        "approved": "Approved",
+        "ordered": "Ordered",
+        "declined": "Declined",
+        "cancelled": "Cancelled",
+        "requested": "Requested",
+        "expired": "Expired"
+      },
+      "po-number": "PO Number",
+      "po-number-placeholder": "PO Number",
+      "created-at": "Created On or After",
+      "created-at-placeholder": "Created On or After",
+      "expiration-date": "Valid Until",
+      "expiration-date-placeholder": "Valid Until",
+      "owner": "Owner",
+      "owner-placeholder": "Owner"
+    },
+    "table": {
+      "id": "Quote#",
+      "status": "Status",
+      "po-number": "PO Number",
+      "created-at": "Created At",
+      "expiration-date": "Valid Until",
+      "owner": "Owner",
+      "details": "Details",
+      "no-quotes-found": "No quotes found"
+    }
+  },
+  "create": {
+    "title": "Request for Quote",
+    "back-to-request-for-quote-list": "Back",
+    "create": "Submit Request",
+    "success": "The Request for Quote has been saved",
+    "form": {
+      "notes-required": "Notes field is required",
+      "notes": "Notes",
+      "notes-placeholder": "Enter notes",
+      "po-number-required": "PO Number is required",
+      "po-number": "PO Number",
+      "po-number-placeholder": "Enter PO Number",
+      "expiration-date-required": "Valid Until is required",
+      "expiration-date": "Valid Until",
+      "expiration-date-placeholder": "Select Valid Until",
+      "information": "Information",
+      "first-name": "First Name",
+      "last-name": "Last Name",
+      "email-address": "Email Address",
+      "phone-number": "Phone Number",
+      "company": "Company Account",
+      "product-id-required": "Product ID is required",
+      "variant-id-required": "Variant ID is required",
+      "quantity-required": "Quantity is required",
+      "original-price-required": "Original Price is required",
+      "offer-price-required": "Offer Price is required",
+      "offer-price-invalid": "Target Price is invalid",
+      "currency-code-required": "Currency Code is required",
+      "invalid-quantity": "Invalid quantity",
+      "submit-error-description": "Submit failed, please check the items and quantity",
+      "submit-warning": "Please add at least one product"
+    },
+    "table": {
+      "title": "Products",
+      "product": "Product",
+      "qty": "Qty",
+      "uom": "UOM",
+      "listed-price": "Listed Price",
+      "target-price": "Target Price",
+      "target-price-placeholder": "Price"
+    }
+  },
+  "detail": {
+    "title": "Quote",
+    "title-with-id": "Quote #{{id}} Details",
+    "information": {
+      "title": "Information",
+      "created-at": "Created At",
+      "valid-until": "Valid Until",
+      "first-name": "First Name",
+      "last-name": "Last Name",
+      "email-address": "Email Address",
+      "phone-number": "Phone Number",
+      "company-account": "Company Account",
+      "notes": "Notes",
+      "po-number": "PO Number",
+      "expiration-date": "Valid Until",
+      "buttons": {
+        "print": "Print RFQ",
+        "cancel": "Cancel",
+        "delete": "Delete"
+      }
+    },
+    "table": {
+      "title": "Products",
+      "customer-product": "Customer Product",
+      "sku": "SKU",
+      "item": "Item",
+      "qty": "Qty to Order",
+      "uom": "UOM",
+      "target-price": "Target Price",
+      "listed-price": "Listed Price",
+      "total-price": "Total Price",
+      "add-product-button": "Add Product",
+      "empty-product-table": "No products found"
+    },
+    "form": {
+      "submit-error": "Failed to update quote, please check the form"
+    },
+    "action-card": {
+      "item-count": "Item Count",
+      "subtotal": "Subtotal",
+      "total": "Total",
+      "notice": "Taxes, discounts and shipping calculated at checkout.",
+      "buttons": {
+        "submit": "Submit",
+        "resubmit": "Re-Submit Request",
+        "convert": "Convert Quote to Order"
+      },
+      "submit-action": {
+        "min-quantity": "{{productTitle}} minimum quantity is {{minQuantity}}",
+        "max-quantity": "{{productTitle}} maximum quantity is {{maxQuantity}}",
+        "out-of-stock": "{{productTitle}} is out of stock max quantity {{maxQuantity}}",
+        "update-success": "Successfully updated quote",
+        "update-error": "Update quote failed",
+        "increment-quantity": "{{productTitle}} quantity must be a multiple of {{increment}}"
+      }
+    },
+    "dialog": {
+      "cancel-quote": {
+        "title": "Cancel Quote",
+        "description": "Are you sure to Cancel this quote? Please provide a reason for cancellation.",
+        "placeholder": "Enter cancellation reason (max 500 characters)",
+        "character-count": "{{count}}/500 characters",
+        "success": "Quote cancelled successfully",
+        "confirm-button": "Confirm",
+        "cancel-button": "Cancel"
+      },
+      "delete-quote": {
+        "title": "Delete Quote",
+        "description": "Are you sure to Delete this quote? This action cannot be undone.",
+        "placeholder": "Enter Deleted reason (max 500 characters)",
+        "confirm": "Yes, Delete",
+        "cancel": "Cancel",
+        "success": "Quote deleted successfully",
+        "confirm-button": "Delete Quote",
+        "cancel-button": "Cancel"
+      },
+      "convert-quote": {
+        "title": "Convert Quote to Order",
+        "description": "Are you sure to Convert this quote to order?",
+        "placeholder": "Enter conversion reason (max 500 characters)",
+        "confirm": "Yes, Convert",
+        "cancel": "Cancel",
+        "success": "Quote converted to order successfully",
+        "confirm-button": "Convert Quote to Order",
+        "cancel-button": "Cancel"
+      },
+      "delete-item": {
+        "title": "Delete Item",
+        "description": "Are you sure to Delete this item?",
+        "confirm": "Yes, Delete",
+        "cancel": "Cancel",
+        "success": "Item deleted successfully"
+      },
+      "add-product": {
+        "title": "Add Product",
+        "description": "Add a product to the quote",
+        "confirm": "Add",
+        "cancel": "Cancel"
+      }
+    }
+  }
+}

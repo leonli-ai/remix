@@ -1,0 +1,28 @@
+{
+  "empty-search-result": {
+    "title": "No se encontraron cotizaciones",
+    "description": "Intenta cambiar el término de búsqueda"
+  },
+  "table": {
+    "quote-list-singular": "Lista de Cotizaciones",
+    "quote-list-plural": "Lista de Cotizaciones",
+    "quote-number": "Cotización #",
+    "status": "Estado",
+    "po-number": "Número de PO",
+    "created-at": "Fecha de Creación",
+    "updated-at": "Fecha de Actualización",
+    "owner": "Propietario",
+    "details": "Detalles"
+  },
+  "pagination": {
+    "total-records": "Total de {{count}} registros"
+  },
+  "filter": {
+    "quote-number-placeholder": "Cotización #",
+    "status-placeholder": "Estado",
+    "po-number-placeholder": "Número de PO",
+    "created-at-placeholder": "Fecha de Creación",
+    "expiration-date-placeholder": "Fecha de Expiración",
+    "customer-placeholder": "Propietario"
+  }
+}

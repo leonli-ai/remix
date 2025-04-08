@@ -1,0 +1,33 @@
+{
+  "title": "Company Role Management",
+  "edit": "Edit",
+  "search-placeholder": "Search",
+  "no-customers-found": "No customers found",
+  "no-customers-found-description": "Try changing the search term",
+  "table": {
+    "name": "Name",
+    "company": "Company",
+    "action": "Action"
+  },
+  "pagination": {
+    "label": "Page {{page}}",
+    "per-page-label": "{{count}} per page"
+  },
+  "modal": {
+    "title": "User Information",
+    "username": "Username",
+    "company": "Company",
+    "role": "Role",
+    "save": "Save",
+    "no-locations-found": "No locations found",
+    "loading": "Loading...",
+    "load-more": "Load More",
+    "no-company-associated": "No company associated with this user",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "change-role-success-description": "Change role success",
+    "change-role-failed-description": "Failed to change role",
+    "change-role-success": "Success",
+    "change-role-failed": "Error"
+  }
+}

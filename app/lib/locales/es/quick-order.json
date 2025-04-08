@@ -1,0 +1,71 @@
+{
+  "page-title": "Pedido Rápido",
+  "list-head-title": "Lista de Productos",
+  "list-head-warning": "Por favor, añade al menos un artículo",
+  "table": {
+    "product": "Producto",
+    "qty": "Cantidad",
+    "uom": "Unidad de Medida",
+    "price": "Precio",
+    "action": "Acción",
+    "add-more-products": "Añadir más productos",
+    "clean-all": "Limpiar todo",
+    "add-to-cart": "Añadir al carrito",
+    "add-to-list": "Añadir a la lista",
+    "add-to-cart-success": "Se añadieron {{count}} productos al carrito con éxito",
+    "add-to-list-success": "Se añadieron {{count}} productos a la lista con éxito",
+    "add-to-cart-error": "Error al añadir al carrito",
+    "add-to-list-error": "Error al añadir a la lista",
+    "search-empty-result": "No se encontraron coincidencias. Intenta con un código de producto o palabra clave válido.",
+    "search-field-placeholder": "Introduce el nombre del producto o número de artículo",
+    "qty-placeholder": "Cantidad",
+    "add-to-list-button": "Añadir a la Lista",
+    "create-and-add-button": "Crear y Añadir",
+    "add-to-cart-button": "Añadir al Carrito",
+    "view-cart": "Ver Carrito",
+    "add-to-cart-error-description": "Por favor, verifica los artículos y la cantidad en el carrito",
+    "add-to-cart-warning": "Por favor, añade al menos un producto"
+  },
+  "upload-order": {
+    "title": "Sube Tus Productos",
+    "drag-drop": "Arrastra y suelta un archivo {{fileTypes}} o",
+    "choose-file": "Elegir Archivo",
+    "file-structure-info": "Qué Estructura de Archivo Se Acepta",
+    "import-title": "Importar Archivo Excel .CSV",
+    "import-instructions": "Sigue estos pasos para importar múltiples productos usando un archivo .CSV, .XLSX o .ODS",
+    "template-download": "Haz clic aquí para descargar la plantilla.{{fileType}}",
+    "enter-product-ids": "Introduce los IDs de producto en la Columna A y la cantidad requerida en la Columna B. Por favor, no incluyas ningún prefijo, guion u otra puntuación en el ID.",
+    "save-and-upload": "Guarda el archivo en tu computadora (formato recomendado .CSV) y súbelo a la plataforma."
+  },
+  "paste-order": {
+    "title": "Pega Tus Productos",
+    "instructions": "Copia y pega tu pedido con el número de artículo, cantidad (y opcionalmente unidades), separados por espacios, puntos y comas o comas.",
+    "placeholder": "Número de Producto del Proveedor/Código del Cliente,Cantidad (ej., 99832RJ,3)",
+    "add-products-button": "Añadir Productos",
+    "invalid-format-error": "Formato inválido",
+    "invalid-format-description": "Formato inválido. Por favor, asegúrate de que el formato sea 'Número de Producto del Proveedor/Código del Cliente, Cantidad'."
+  },
+  "import-validation": {
+    "title": "Validación de Importación",
+    "items-count": "{{count}} artículos",
+    "success-count": "{{count}} productos fueron importados con éxito, y por favor revisa los que tienen error.",
+    "product-number": "Producto #",
+    "quantity": "Cantidad",
+    "uom": "Unidad de Medida",
+    "message": "Mensaje",
+    "out-of-stock": "Agotado",
+    "product-not-found": "El producto no fue encontrado",
+    "product-quantity-not-correct": "La cantidad del producto no es correcta",
+    "product-was-not-found": "El producto no fue encontrado",
+    "valid": "Válido"
+  },
+  "validate-action": {
+    "min-quantity": "cantidad mínima es {{minQuantity}}",
+    "max-quantity": "cantidad máxima es {{maxQuantity}}",
+    "quantity-rule-error": "Error de regla de cantidad, {{message}}",
+    "out-of-stock": "Agotado cantidad máxima {{maxQuantity}}",
+    "update-success": "Cotización actualizada con éxito",
+    "update-error": "Error al actualizar la cotización",
+    "increment-quantity": "La cantidad debe ser un múltiplo de {{increment}}"
+  }
+}

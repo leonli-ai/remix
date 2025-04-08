@@ -1,0 +1,109 @@
+{
+  "title": "Quote #{{id}} Details",
+  "information": {
+    "title": "Information",
+    "created-at": "Created At",
+    "expiration-date": "Valid Until",
+    "first-name": "First Name",
+    "last-name": "Last Name",
+    "email-address": "Email Address",
+    "phone-number": "Phone Number",
+    "po-number": "PO Number",
+    "company-name": "Company Name",
+    "company-account": "Company Account",
+    "notes": "Notes"
+  },
+  "products": {
+    "title": "Products",
+    "columns": {
+      "customer-product": "Customer product",
+      "sku": "SKU",
+      "item": "Item",
+      "qty": "Qty to Order",
+      "uom": "UOM",
+      "target-price": "Target Price",
+      "listed-price": "Listed Price",
+      "total-price": "Total Price"
+    }
+  },
+  "order-summary": {
+    "item-count": "Item Count",
+    "items": "Items",
+    "item": "Item",
+    "subtotal": "Subtotal",
+    "taxes-notice": "Taxes, discounts and shipping calculated at checkout."
+  },
+  "buttons": {
+    "cancel": "Cancel",
+    "update-item": "Save Updates",
+    "approve": "Approve",
+    "decline": "Decline",
+    "convert": "Convert Quote to Order",
+    "resubmit": "Re-Submit Request",
+    "delete": "Delete",
+    "back": "Back",
+    "add-more-products": "Add More Products"
+  },
+  "messages": {
+    "cancel-success": "Quote cancelled successfully.",
+    "cancel-error": "An error occurred. Please try again.",
+    "update-success": "Quote updated successfully.",
+    "update-error": "An error occurred. Please try again.",
+    "approve-success": "Quote approved successfully.",
+    "approve-error": "An error occurred. Please try again.",
+    "decline-success": "Quote declined successfully.",
+    "decline-error": "An error occurred. Please try again.",
+    "convert-success": "Quote converted to order successfully.",
+    "convert-error": "An error occurred. Please try again.",
+    "delete-success": "Quote deleted successfully.",
+    "delete-error": "An error occurred. Please try again."
+  },
+  "actionModal": {
+    "decline": {
+      "title": "Decline Quote",
+      "message": "Are you sure you want to decline this quote? This action will notify the customer and update the quote status to 'Declined'.",
+      "reason-placeholder": "Enter conversion reason (max 500 characters)",
+      "reason-required": "Reason is required",
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    },
+    "convert": {
+      "title": "Convert to Order",
+      "message": "Are you sure you want to convert this quote to an order?",
+      "reason-placeholder": "Enter conversion reason (max 500 characters)",
+      "reason-required": "Reason is required",
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    },
+    "delete": {
+      "title": "Delete Quote",
+      "message": "Are you sure you want to delete this quote? This action cannot be undone.",
+      "reason-placeholder": "Enter confirmation reason (max 500 characters)",
+      "reason-required": "Reason is required",
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    },
+    "approve": {
+      "title": "Approve Quote",
+      "message": "Are you sure you want to approve this quote? This action will notify the customer and update the quote status to 'Approved'.",
+      "reason-placeholder": "Enter approval note (max 500 characters)",
+      "reason-required": "Approval note is required",
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    },
+    "cancel": {
+      "title": "Cancel Quote",
+      "message": "Are you sure to Cancel this quote? Please provide a reason for cancellation.",
+      "reason-placeholder": "Enter cancellation reason (max 500 characters)",
+      "reason-required": "Cancellation reason is required",
+      "confirm": "Cancel Quote",
+      "cancel": "Go Back"
+    }
+  },
+  "errors": {
+    "validation-failed": "Please fix the errors before submitting.",
+    "product-required": "Product is required",
+    "quantity-required": "Quantity is required",
+    "price-required": "Price is required"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "empty-search-result": {
+    "title": "No customers part number found",
+    "description": "Try changing the search term"
+  },
+  "table": {
+    "customer-part-number": "Customer Part Number",
+    "product-name": "Product Name",
+    "sku-id": "SKU ID",
+    "company-id": "Company ID",
+    "company-name": "Company Name",
+    "actions": "Actions"
+  },
+  "pagination": {
+    "total-records": "Total of {{count}} records"
+  },
+  "delete": {
+    "trigger": "Delete",
+    "bulk-delete-trigger": "Bulk Delete",
+    "title": "Delete Customer Partner Number",
+    "description": "Are you sure you want to delete this Customer Partner Number?",
+    "confirm": "Yes, Delete",
+    "cancel": "Cancel"
+  },
+  "import": {
+    "trigger": "Import file",
+    "title": "Import Validation",
+    "upload-file-error": "Invalid file type. Please upload a .CSV or .XLSX file.",
+    "success-count": "data were successfully imported, and please check the ones with error.",
+    "message": "Message",
+    "row": "Row"
+  },
+  "download": {
+    "trigger": "Download Template",
+    "title": "Download Template",
+    "company-placeholder": "Select Company",
+    "format-placeholder": "Select Format"
+  },
+  "filter": {
+    "sku-id": "SKU ID",
+    "sku-id-placeholder": "SKU ID",
+    "customer-part-number": "Customer Part Number",
+    "customer-part-number-placeholder": "Customer Part Number",
+    "product-name": "Product Name",
+    "product-name-placeholder": "Product Name",
+    "company-id": "Company ID",
+    "company-id-placeholder": "Company ID"
+  },
+  "add-customer-part-number-success": "Customer part number added successfully",
+  "delete-customer-part-number-success": "Customer part number deleted successfully"
+}

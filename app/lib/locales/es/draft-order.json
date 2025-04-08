@@ -1,0 +1,77 @@
+{
+  "list": {
+    "filter": {
+      "status": "Estado",
+      "status-placeholder": "Estado",
+      "status-options": {
+        "pending-approval": "Pendiente de aprobación",
+        "declined": "Rechazado"
+      },
+      "order-number": "Número de Pedido",
+      "order-number-placeholder": "Número de Pedido",
+      "order-info": "Información del Pedido",
+      "order-info-placeholder": "Productos, ID de SKU, o PO #, etc",
+      "created-at": "Creado en o después de",
+      "created-at-placeholder": "Creado en o después de",
+      "updated-at": "Actualizado en o después de",
+      "updated-at-placeholder": "Actualizado en o después de"
+    },
+    "sort": {
+      "label": "Ordenar",
+      "number": "Número de Pedido Borrador",
+      "updated-at": "Actualizado en",
+      "customer-name": "Cliente",
+      "total-price": "Precio Total"
+    },
+    "title": "Pedidos Pendientes de Aprobación",
+    "table": {
+      "draft-order": "Pedido Borrador",
+      "po-number": "Número de PO",
+      "update-date": "Fecha de Actualización",
+      "customer": "Cliente",
+      "status": "Estado",
+      "total": "Total",
+      "details": "Detalles",
+      "no-orders-pending-approval": "No hay pedidos pendientes de aprobación.",
+      "status-invoice-sent-label": "Pendiente de Aprobación",
+      "status-open-label": "Pendiente de Aprobación",
+      "status-rejected-label": "Rechazado",
+      "status-approved-label": "Pendiente de Aprobación",
+      "status-po-automation-label": "Pendiente de Aprobación"
+    }
+  },
+  "detail": {
+    "title": "Revisión de Pedido Pendiente",
+    "order-number-title": "Pedido Borrador",
+    "note": "Nota de",
+    "no-pending-approval-order": "No se encontró pedido pendiente de aprobación",
+    "approve-success": "El pedido fue aprobado con éxito",
+    "reject-success": "El pedido borrador ha sido rechazado con éxito",
+    "delete-success": "Eliminación de pedido(s) pendiente(s) de aprobación con éxito.",
+    "reorder-success": "Añadir {{count}} artículos al carrito con éxito",
+    "reorder-error": "Error al añadir al carrito, {{error}}",
+    "reorder-error-with-description": "Error al añadir al carrito",
+    "approve-button": "Aprobar",
+    "decline-button": "Rechazar",
+    "reorder-button": "Reordenar",
+    "delete-button": "Eliminar"
+  },
+  "dialog": {
+    "reject-title": "Rechazar Pedido",
+    "reject-description": "¿Estás seguro de que deseas rechazar este pedido? Por favor, proporciona una razón para el rechazo.",
+    "reject-confirm": "Rechazar",
+    "delete-title": "Eliminar Pedido",
+    "delete-description": "¿Estás seguro de que deseas eliminar este pedido? Esta acción no se puede deshacer.",
+    "delete-confirm": "Eliminar",
+    "location-title": "Desajuste de Ubicación",
+    "location-description": "El pedido está asociado con {{locationName}}, pero estás en una cuenta diferente. ¿Te gustaría continuar con la cuenta actual o cambiar a {{locationName}}?",
+    "location-confirm": "Continuar de todos modos",
+    "approve-title": "Aprobar Pedido",
+    "approve-description": "¿Estás seguro de que deseas aprobar este pedido?",
+    "approve-confirm": "Aprobar",
+    "cancel": "Cancelar",
+    "switch-account": "Cambiar Cuenta",
+    "reject-placeholder": "Introduce la razón del rechazo (máximo 500 caracteres)",
+    "reject-character-count": "{{count}}/500 caracteres"
+  }
+}

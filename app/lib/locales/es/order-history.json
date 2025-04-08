@@ -1,0 +1,87 @@
+{
+  "list": {
+    "filter": {
+      "name": "Número de Pedido",
+      "name-placeholder": "Número de Pedido",
+      "po-number": "Número de PO",
+      "po-number-placeholder": "Número de PO",
+      "sku": "SKU",
+      "sku-placeholder": "SKU",
+      "status": "Estado",
+      "status-placeholder": "Estado",
+      "status-options": {
+        "open": "Abierto",
+        "cancelled": "Cancelado"
+      },
+      "account": "Cuenta",
+      "account-placeholder": "Cuenta"
+    },
+    "sort": {
+      "label": "Ordenar",
+      "customer-name-label": "Cliente",
+      "order-number-label": "Número de Pedido"
+    },
+    "title": "Historial de Pedidos",
+    "total-orders": "Total de Pedidos",
+    "table": {
+      "order-number": "Número de Pedido",
+      "order-total": "Total del Pedido",
+      "status": "Estado",
+      "po-number": "Número de PO",
+      "created-by": "Creado por",
+      "approved-by": "Aprobado por",
+      "ordered-date": "Fecha del Pedido",
+      "details": "Detalles"
+    }
+  },
+  "detail": {
+    "title": "Detalles del Pedido",
+    "information-card": {
+      "order-number": "Número de Pedido",
+      "view-invoice": "Ver Factura",
+      "company-name": "Nombre de la Empresa",
+      "order-date": "Fecha del Pedido",
+      "ordered-by": "Pedido por",
+      "contact-email": "Correo Electrónico de Contacto",
+      "financial-status": "Estado Financiero",
+      "fulfillment-status": "Estado de Cumplimiento",
+      "payment-terms": "Términos de Pago",
+      "billing-address": "Dirección de Facturación",
+      "po-number": "Número de PO",
+      "ship-to": "Enviar a",
+      "shipping-method": "Método de Envío",
+      "location": "Ubicación",
+      "summary": "Resumen",
+      "item-count": "Cantidad de Artículos",
+      "subtotal": "Subtotal",
+      "tax": "Impuesto",
+      "shipping": "Envío",
+      "total": "Total",
+      "buttons": {
+        "reorder": "Reordenar",
+        "print": "Imprimir"
+      },
+      "status": {
+        "open": "Abierto",
+        "closed": "Cerrado",
+        "cancelled": "Cancelado",
+        "not-cancelled": "No Cancelado"
+      },
+      "po-link": "Archivo de PO"
+    },
+    "product-table": {
+      "title": "Productos",
+      "customer-product": "Producto del Cliente",
+      "sku": "SKU",
+      "item": "Artículo",
+      "qty": "Cantidad",
+      "subtotal": "Subtotal",
+      "no-products": "No hay productos"
+    },
+    "printed-on": "Impreso en",
+    "no-order-found": "No se encontró pedido",
+    "add-to-cart-success": "Añadir {{count}} artículos al carrito con éxito",
+    "add-to-cart-error": "Error al añadir al carrito, {{error}}",
+    "add-to-cart-error-with-description": "Error al añadir al carrito"
+  }
+}

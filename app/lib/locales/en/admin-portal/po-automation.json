@@ -1,0 +1,67 @@
+{
+  "title": "PO to Order",
+  "company-location": "Company Location",
+  "company-location-placeholder": "Select Company Location",
+  "payment-terms": "Payment Terms",
+  "payment-terms-placeholder": "Select Payment Terms",
+  "preview-button": "Preview",
+  "choose-location-button": "Choose Location",
+  "upload-file-button": "Upload File",
+  "upload-file": "Import File",
+  "upload-file-placeholder": "Accept (.PDF, .JPEG, .PNG, .BMP) file. Max 10MB, 5 pages.",
+  "upload-file-type-error": "Invalid file type. Please upload a (.PDF, .JPEG, .PNG, .BMP) file. Max 10MB",
+  "upload-file-error": "Upload failed",
+  "parse-file-error": "Parse failed",
+  "parse-file-success": "Parse success",
+  "no-matching-shipping-address": "No matching shipping address found for customer",
+  "status": {
+    "waiting": "Waiting",
+    "uploading": "Uploading",
+    "parsing": "Parsing",
+    "success": "Success",
+    "error": "Error"
+  },
+  "modal": {
+    "choose-location": {
+      "title": "Choose Company Location",
+      "description": "Invalid Company Location,Please select a valid company location below",
+      "select-label": "Company Location",
+      "select-placeholder": "Select Company Location",
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    },
+    "choose-shipping-method": {
+      "title": "Choose Shipping Method",
+      "description": "Please select a valid shipping method below",
+      "select-label": "Shipping Method",
+      "select-placeholder": "Select Shipping Method",
+      "confirm": "Confirm",
+      "cancel": "Cancel"
+    }
+  },
+  "preview": {
+    "title": "Preview",
+    "back": "Back",
+    "information-card": {
+      "first-name": "First Name",
+      "last-name": "Last Name",
+      "email-address": "Email Address",
+      "phone-number": "Phone Number",
+      "company-account": "Company Account",
+      "shipping-address": "Shipping Address",
+      "po-number": "PO Number"
+    },
+    "table": {
+      "customer-product": "Customer Product",
+      "sku": "SKU",
+      "item": "Item",
+      "qty": "Qty",
+      "uom": "UOM",
+      "price": "Price",
+      "invalid-price": "Invalid at this location",
+      "subtotal": "Subtotal"
+    },
+    "action-button": "Convert to order",
+    "create-order-success": "Order created successfully"
+  }
+}

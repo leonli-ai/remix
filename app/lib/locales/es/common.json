@@ -1,0 +1,44 @@
+{
+  "text": {
+    "item": "artículo",
+    "items": "artículos",
+    "upper-item": "Artículo",
+    "upper-items": "Artículos",
+    "back": "Atrás",
+    "yes": "Sí",
+    "no": "No",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "success": "Éxito",
+    "error": "Error"
+  },
+  "loading": "Cargando...",
+  "sort": {
+    "label": "Ordenar",
+    "ascending": "Ascendente",
+    "descending": "Descendente"
+  },
+  "pagination": {
+    "per-page": "Por Página",
+    "per-page-placeholder": "Selecciona artículos por página",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "more-pages": "Más páginas"
+  },
+  "status": {
+    "open": "Abierto",
+    "submitted": "Enviado",
+    "approved": "Aprobado",
+    "rejected": "Rechazado",
+    "ordered": "Ordenado",
+    "cancelled": "Cancelado",
+    "requested": "Solicitado",
+    "expired": "Expirado",
+    "declined": "Declinado",
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "paused": "Pausado",
+    "pending": "Pendiente",
+    "completed": "Completado"
+  }
+}

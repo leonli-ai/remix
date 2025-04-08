@@ -1,0 +1,33 @@
+{
+  "title": "Gestión de Roles de Empresa",
+  "edit": "Editar",
+  "search-placeholder": "Buscar",
+  "no-customers-found": "No se encontraron clientes",
+  "no-customers-found-description": "Intenta cambiar el término de búsqueda",
+  "table": {
+    "name": "Nombre",
+    "company": "Empresa",
+    "action": "Acción"
+  },
+  "pagination": {
+    "label": "Página {{page}}",
+    "per-page-label": "{{count}} por página"
+  },
+  "modal": {
+    "title": "Información del Usuario",
+    "username": "Nombre de Usuario",
+    "company": "Empresa",
+    "role": "Rol",
+    "save": "Guardar",
+    "no-locations-found": "No se encontraron ubicaciones",
+    "loading": "Cargando...",
+    "load-more": "Cargar más",
+    "no-company-associated": "No hay empresa asociada a este usuario",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "change-role-success-description": "Cambio de rol exitoso",
+    "change-role-failed-description": "Error al cambiar el rol",
+    "change-role-success": "Exitoso",
+    "change-role-failed": "Error"
+  }
+}

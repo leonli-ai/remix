@@ -1,0 +1,30 @@
+{
+  "title": "Compare",
+  "loading": "Loading...",
+  "no-products-to-compare": "No products to compare",
+  "no-products-to-compare-description": "Please add products to compare",
+  "check-item-quantity": "Please check the items and quantity in cart",
+  "remove-all-button": "Remove All",
+  "product-differences-highlighted": "Product differences are highlighted",
+  "add-to-cart-button": "Add to Cart",
+  "sold-out-button": "Sold Out",
+  "adding-to-cart": "Adding...",
+  "success-description": "Successfully added to cart",
+  "view-cart": "View cart",
+  "error": "Failed to add to cart, {{error}}",
+  "adding": "Adding...",
+  "table": {
+    "config": {
+      "sku": "SKU ID",
+      "vendor": "Vendor",
+      "price": "Price",
+      "uom": "UOM",
+      "material": "Material",
+      "length": "Length",
+      "width": "Width",
+      "height": "Height",
+      "weight": "Weight",
+      "color": "Color"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Comparar",
+  "loading": "Cargando...",
+  "no-products-to-compare": "No hay productos para comparar",
+  "no-products-to-compare-description": "Por favor, añade productos para comparar",
+  "check-item-quantity": "Por favor, revisa los artículos y la cantidad en el carrito",
+  "remove-all-button": "Eliminar Todo",
+  "product-differences-highlighted": "Las diferencias de producto están resaltadas",
+  "add-to-cart-button": "Añadir al Carrito",
+  "sold-out-button": "Agotado",
+  "adding-to-cart": "Añadiendo...",
+  "success-description": "Añadido al carrito con éxito",
+  "view-cart": "Ver carrito",
+  "error": "Error al añadir al carrito, {{error}}",
+  "adding": "Añadiendo...",
+  "table": {
+    "config": {
+      "sku": "ID de SKU",
+      "vendor": "Vendedor",
+      "price": "Precio",
+      "uom": "Unidad de Medida",
+      "material": "Material",
+      "length": "Longitud",
+      "width": "Ancho",
+      "height": "Altura",
+      "weight": "Peso",
+      "color": "Color"
+    }
+  }
+}

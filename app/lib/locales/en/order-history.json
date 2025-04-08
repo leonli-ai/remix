@@ -1,0 +1,87 @@
+{
+  "list": {
+    "filter": {
+      "name": "Order Number",
+      "name-placeholder": "Order Number",
+      "po-number": "PO Number",
+      "po-number-placeholder": "PO Number",
+      "sku": "SKU",
+      "sku-placeholder": "SKU",
+      "status": "Status",
+      "status-placeholder": "Status",
+      "status-options": {
+        "open": "Open",
+        "cancelled": "Cancelled"
+      },
+      "account": "Account",
+      "account-placeholder": "Account"
+    },
+    "sort": {
+      "label": "Sort",
+      "customer-name-label": "Customer",
+      "order-number-label": "Order Number"
+    },
+    "title": "Order History",
+    "total-orders": "Total Orders",
+    "table": {
+      "order-number": "Order Number",
+      "order-total": "Order Total",
+      "status": "Status",
+      "po-number": "PO Number",
+      "created-by": "Created By",
+      "approved-by": "Approved By",
+      "ordered-date": "Ordered Date",
+      "details": "Details"
+    }
+  },
+  "detail": {
+    "title": "Order Details",
+    "information-card": {
+      "order-number": "Order Number",
+      "view-invoice": "View Invoice",
+      "company-name": "Company Name",
+      "order-date": "Order Date",
+      "ordered-by": "Ordered by",
+      "contact-email": "Contact Email",
+      "financial-status": "Financial Status",
+      "fulfillment-status": "Fulfillment Status",
+      "payment-terms": "Payment Terms",
+      "billing-address": "Billing Address",
+      "po-number": "PO Number",
+      "ship-to": "Ship To",
+      "shipping-method": "Shipping Method",
+      "location": "Location",
+      "summary": "Summary",
+      "item-count": "Item Count",
+      "subtotal": "Subtotal",
+      "tax": "Tax",
+      "shipping": "Shipping",
+      "total": "Total",
+      "buttons": {
+        "reorder": "Reorder",
+        "print": "Print"
+      },
+      "status": {
+        "open": "Open",
+        "closed": "Closed",
+        "cancelled": "Cancelled",
+        "not-cancelled": "Not Cancelled"
+      },
+      "po-link": "PO File"
+    },
+    "product-table": {
+      "title": "Products",
+      "customer-product": "Customer Product",
+      "sku": "SKU",
+      "item": "Item",
+      "qty": "Qty",
+      "subtotal": "Subtotal",
+      "no-products": "No products"
+    },
+    "printed-on": "Printed on",
+    "no-order-found": "No order found",
+    "add-to-cart-success": "Add {{count}} items to cart success",
+    "add-to-cart-error": "Add to cart failed, {{error}}",
+    "add-to-cart-error-with-description": "Add to cart failed"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "list": {
+    "filter": {
+      "name": "Name",
+      "name-placeholder": "Name",
+      "matchType": "contains"
+    },
+    "table": {
+      "account-name": "Account Name",
+      "company-address": "Company Address",
+      "city": "City",
+      "state": "State",
+      "zip": "Zip/Postal Code",
+      "country": "Country",
+      "actions": "Actions",
+      "title": "Ship To Locations",
+      "no-locations-found": "No company locations.",
+      "role": "Role",
+      "select-role": "Select a Role",
+      "Admin": "Admin",
+      "Ordering Only": "Ordering Only",
+      "Order Approver": "Order Approver"
+    }
+  }
+}

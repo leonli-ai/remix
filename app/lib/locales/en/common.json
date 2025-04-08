@@ -1,0 +1,44 @@
+{
+  "text": {
+    "item": "item",
+    "items": "items",
+    "upper-item": "Item",
+    "upper-items": "Items",
+    "back": "Back",
+    "yes": "Yes",
+    "no": "No",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "success": "Success",
+    "error": "Error"
+  },
+  "loading": "Loading...",
+  "sort": {
+    "label": "Sort",
+    "ascending": "Ascending",
+    "descending": "Descending"
+  },
+  "pagination": {
+    "per-page": "Per Page",
+    "per-page-placeholder": "Select items per page",
+    "previous": "Previous",
+    "next": "Next",
+    "more-pages": "More pages"
+  },
+  "status": {
+    "open": "Open",
+    "submitted": "Submitted",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "ordered": "Ordered",
+    "cancelled": "Cancelled",
+    "requested": "Requested",
+    "expired": "Expired",
+    "declined": "Declined",
+    "active": "Active",
+    "inactive": "Inactive",
+    "paused": "Paused",
+    "pending": "Pending",
+    "completed": "Completed"
+  }
+}

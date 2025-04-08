@@ -1,0 +1,316 @@
+{
+  "list": {
+    "title": "Subscription Orders",
+    "new-request": "Create new Subscription",
+    "total-orders": "Total Subscriptions",
+    "filter": {
+      "order-number": "Order Number",
+      "order-number-placeholder": "Order Number",
+      "order-name": "Order Name",
+      "order-name-placeholder": "Order Name",
+      "status": "Status",
+      "status-placeholder": "Status",
+      "status-options": {
+        "active": "Active",
+        "paused": "Paused",
+        "cancelled": "Cancelled",
+        "pending": "Pending",
+        "completed": "Completed",
+        "declined": "Declined"
+      },
+      "order-total": "Order Total",
+      "order-total-placeholder": "Order Total",
+      "next-delivery-date": "Next Delivery Date On or After",
+      "next-delivery-date-placeholder": "Next Delivery Date",
+      "approved-by": "Approved By",
+      "approved-by-placeholder": "Approved By"
+    },
+    "table": {
+      "no-data": "No subscription orders found",
+      "details": "Details",
+      "order-number": "Order Number",
+      "order-name": "Order Name",
+      "status": "Status",
+      "order-total": "Order Total",
+      "frequency": "Frequency",
+      "next-delivery-date": "Next Delivery Date",
+      "approved-by": "Approved By",
+      "frequency-options": {
+        "daily": "Daily",
+        "weekly": "Weekly",
+        "monthly": "Monthly",
+        "quarterly": "Quarterly",
+        "biannual": "Biannual",
+        "annually": "Annually",
+        "days": "Days",
+        "weeks": "Weeks",
+        "months": "Months",
+        "years": "Years"
+      },
+      "expand": {
+        "delivery-order-date": "Delivery Order Date",
+        "total-delivery-items": "Total Delivery Items",
+        "order-total": "Order Total",
+        "table": {
+          "title": "Products",
+          "customer-product": "Customer Product",
+          "sku": "SKU",
+          "item": "Item",
+          "qty": "Qty",
+          "subtotal": "Subtotal"
+        },
+        "actions": {
+          "details": "Details",
+          "edit": "Edit",
+          "delete": "Delete",
+          "skip-delivery": "Skip this Time"
+        }
+      }
+    }
+  },
+  "create": {
+    "title": "Create Subscription",
+    "form": {
+      "section": {
+        "subscription-settings": "Subscription Settings",
+        "company-account": "Company Account",
+        "shipping": "Shipping",
+        "payment": "Payment"
+      },
+      "load-more": "Load More",
+      "name": "Subscription Order Name",
+      "name-placeholder": "Enter Subscription Name",
+      "name-required": "Subscription Order Name is required",
+      "po-number": "PO Number",
+      "po-number-placeholder": "Enter PO Number",
+      "start-delivery-date": "Start Delivery Date",
+      "start-delivery-date-placeholder": "Pick a Date",
+      "start-delivery-date-required": "Start Delivery Date is required",
+      "end-delivery-date": "End Delivery Date",
+      "end-delivery-date-placeholder": "Pick a Date",
+      "end-delivery-date-required": "End Delivery Date is required",
+      "end-delivery-date-invalid": "End Delivery Date must be greater than Start Delivery Date",
+      "end-delivery-date-max": "End Delivery Date must be less than or equal to {{max}}",
+      "frequency": "Frequency",
+      "frequency-placeholder": "Choose Frequency",
+      "frequency-required": "Frequency is required",
+      "custom-frequency-number": "Custom Frequency Number",
+      "custom-frequency-number-placeholder": "Enter Custom Frequency Number",
+      "custom-frequency-number-required": "Custom Frequency Number is required",
+      "custom-frequency-unit": "Custom Frequency Unit",
+      "custom-frequency-unit-placeholder": "Choose Custom Frequency",
+      "custom-frequency-unit-required": "Custom Frequency Unit is required",
+      "customer-account": "Customer Account",
+      "customer-account-placeholder": "Choose Account",
+      "customer-account-required": "Customer Account is required",
+      "shipping-method": "Shipping Method",
+      "shipping-method-placeholder": "Choose Shipping Method",
+      "shipping-method-required": "Shipping Method is required",
+      "shipping-address": "Shipping Address",
+      "payment-method": "Payment Method",
+      "payment-method-placeholder": "Choose Payment Method",
+      "payment-method-required": "Payment Method is required",
+      "actions": {
+        "back-to-subscription-orders-list": "Cancel",
+        "create": "Create"
+      },
+      "toast": {
+        "submit-warning": "Please add at least one product",
+        "submit-error": "Submit failed, please check the items and quantity",
+        "submit-success": "The Subscription Order has been saved",
+        "create-subscription-order-error": "Create subscription order error",
+        "create-subscription-order-success": "Subscription order created successfully",
+        "no-subscription-order-id": "No subscription order id"
+      },
+      "shipping-method-modal": {
+        "title": "Choose Shipping Method",
+        "confirm": "Confirm",
+        "cancel": "Cancel",
+        "required": "Shipping Method is required",
+        "no-shipping-methods": "No shipping methods found"
+      },
+      "frequency-options": {
+        "daily": "Daily",
+        "weekly": "Weekly",
+        "monthly": "Monthly",
+        "quarterly": "Quarterly",
+        "biannual": "Biannual",
+        "annually": "Annually",
+        "custom": "Custom",
+        "day": "Day",
+        "week": "Week",
+        "month": "Month",
+        "year": "Year"
+      }
+    }
+  },
+  "edit": {
+    "title": "Edit Subscription",
+    "error": {
+      "no-order-data": "No subscription order data found"
+    },
+    "form": {
+      "actions": {
+        "update": "Update"
+      },
+      "toast": {
+        "update-subscription-order-error": "Update subscription order error",
+        "update-subscription-order-success": "Subscription order updated successfully"
+      }
+    }
+  },
+  "detail": {
+    "header": {
+      "title": "Subscription Details"
+    },
+    "information-card": {
+      "order-number": "Subscription Order Office Center Articles",
+      "title": "Subscription #{{number}}",
+      "company-account": "Company Account",
+      "order-date": "Order Date",
+      "start-delivery-date": "Start Delivery Date",
+      "next-delivery-date": "Next Delivery Date",
+      "end-delivery-date": "End Delivery Date",
+      "frequency": "Frequency",
+      "ordered-by": "Ordered by",
+      "contact-email": "Contact Email",
+      "po-number": "PO Number",
+      "payment-terms": "Payment Terms",
+      "billing-address": "Billing Address",
+      "shipping-method": "Shipping Method",
+      "ship-to": "Ship To",
+      "summary": "Summary",
+      "item-count": "Item Count",
+      "subtotal": "Subtotal",
+      "tax": "Tax",
+      "shipping": "Shipping",
+      "total": "Total",
+      "buttons": {
+        "skip-delivery": "Skip this Time",
+        "edit": "Edit",
+        "pause": "Pause",
+        "resume": "Resume",
+        "approve": "Approve",
+        "decline": "Decline",
+        "cancel": "Cancel",
+        "delete": "Delete"
+      },
+      "product-table": {
+        "title": "Products",
+        "header": {
+          "product": "Product",
+          "sku": "SKU",
+          "quantity": "Quantity",
+          "price": "Price",
+          "total": "Total"
+        }
+      },
+      "no-subscription-found": "No subscription found"
+    }
+  },
+  "recommend-for-you": {
+    "title": {
+      "black": "Recommend",
+      "white": "For You"
+    },
+    "product-card": {
+      "inventory": "Inventory",
+      "list-price": "List Price",
+      "your-price": "Your Price",
+      "customer-partner-number": "Customer Partner Number",
+      "sku": "SKU",
+      "subscribe-now": "Subscribe Now",
+      "new": "New"
+    },
+    "toast": {
+      "add-success": "Recommended products have been added to the subscription order",
+      "product-not-found-at-this-location": "Product not found at this location"
+    }
+  },
+  "common-actions": {
+    "delete": {
+      "dialog": {
+        "title": "Delete Subscription",
+        "description": "Are you sure you want to delete this subscription?",
+        "confirm": "Confirm",
+        "cancel": "Cancel"
+      },
+      "toast": {
+        "success": "Subscription deleted successfully",
+        "error": "Delete subscription failed"
+      }
+    },
+    "skip-delivery": {
+      "dialog": {
+        "title": "Skip Delivery",
+        "description": "Are you sure you want to skip this delivery?",
+        "confirm": "Confirm",
+        "cancel": "Cancel"
+      },
+      "toast": {
+        "success": "Delivery skipped successfully",
+        "error": "Skip delivery failed"
+      }
+    },
+    "pause": {
+      "dialog": {
+        "title": "Pause Subscription",
+        "description": "Are you sure you want to pause this subscription?",
+        "confirm": "Confirm",
+        "cancel": "Cancel"
+      },
+      "toast": {
+        "success": "Subscription paused successfully",
+        "error": "Pause subscription failed"
+      }
+    },
+    "resume": {
+      "dialog": {
+        "title": "Resume Subscription",
+        "description": "Are you sure you want to resume this subscription?",
+        "confirm": "Confirm",
+        "cancel": "Cancel"
+      },
+      "toast": {
+        "success": "Subscription resumed successfully",
+        "error": "Resume subscription failed"
+      }
+    },
+    "approve": {
+      "dialog": {
+        "title": "Approve Subscription",
+        "description": "Are you sure you want to approve this subscription?",
+        "confirm": "Confirm",
+        "cancel": "Cancel"
+      },
+      "toast": {
+        "success": "Subscription approved successfully",
+        "error": "Approve subscription failed"
+      }
+    },
+    "decline": {
+      "dialog": {
+        "title": "Decline Subscription",
+        "description": "Are you sure you want to decline this subscription?",
+        "confirm": "Confirm",
+        "cancel": "Cancel"
+      },
+      "toast": {
+        "success": "Subscription declined successfully",
+        "error": "Decline subscription failed"
+      }
+    }
+  },
+  "delivery-history": {
+    "list": {
+      "title": "Delivery History",
+      "total-deliveries": "Total Delivery",
+      "filter": {
+        "name": "Order Number",
+        "name-placeholder": "Order Number",
+        "delivery-date": "Delivery Date On or After",
+        "delivery-date-placeholder": "Delivery Date"
+      }
+    }
+  }
+}

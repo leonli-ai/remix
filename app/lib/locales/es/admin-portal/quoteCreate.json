@@ -1,0 +1,45 @@
+{
+  "title": "Solicitud de Cotización",
+  "resubmit-title": "Reenviar Cotización",
+  "back": "Atrás",
+  "information": "Información",
+  "notes": "Notas",
+  "notes-placeholder": "Ingrese notas",
+  "po-number": "Número de PO",
+  "po-number-placeholder": "Ingrese número de PO",
+  "expiration-date": "Válido hasta que",
+  "expiration-date-placeholder": "Seleccione válido hasta que",
+  "products": "Productos",
+  "table": {
+    "product": "Producto",
+    "qty": "Cantidad",
+    "uom": "UOM",
+    "target-price": "Precio Objetivo",
+    "listed-price": "Precio de Lista"
+  },
+  "add-more-products": "Añadir más productos",
+  "clean-all": "Limpiar todo",
+  "submit-request": "Enviar Cotización",
+  "quote-created-success": "Cotización creada con éxito",
+  "customer": {
+    "label": "Cliente",
+    "placeholder": "Buscar un cliente",
+    "location-label": "Ubicación",
+    "location-placeholder": "Buscar una ubicación",
+    "first-name": "Nombre",
+    "last-name": "Apellido",
+    "email-address": "Correo Electrónico",
+    "phone-number": "Teléfono",
+    "company-name": "Nombre de la Empresa",
+    "company-account": "Cuenta de Empresa"
+  },
+  "errors": {
+    "customer-required": "Selección de cliente requerida",
+    "location-required": "Selección de ubicación requerida",
+    "product-required": "Producto requerido",
+    "no-products": "Al menos un producto es requerido",
+    "notes-required": "Notas es requerida",
+    "po-number-required": "Número de PO es requerido",
+    "expiration-date-required": "Válido hasta que se requiera"
+  }
+}

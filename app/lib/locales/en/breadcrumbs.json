@@ -1,0 +1,21 @@
+{
+  "home": "Home",
+  "users": "Users",
+  "customer": "Customer",
+  "company-management": "Company Management",
+  "quick-order": "Quick Order",
+  "shopping-lists": "Shopping Lists",
+  "orders-pending-approval": "Orders Pending Approval",
+  "order-history": "Order History",
+  "order-details": "Order Details",
+  "compare": "Compare",
+  "company-location": "Company Location",
+  "ship-to-locations": "Ship To Locations",
+  "request-for-quote": "Request for Quote",
+  "quotes": "Quotes",
+  "quote-details": "Quote Details",
+  "subscription-orders": "Subscription Orders",
+  "create-subscription": "Create Subscription",
+  "edit-subscription": "Edit Subscription",
+  "order-subscription-details": "Order Subscription Details"
+}

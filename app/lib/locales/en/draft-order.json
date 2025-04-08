@@ -1,0 +1,77 @@
+{
+  "list": {
+    "filter": {
+      "status": "Status",
+      "status-placeholder": "Status",
+      "status-options": {
+        "pending-approval": "Pending approval",
+        "declined": "Declined"
+      },
+      "order-number": "Order Number",
+      "order-number-placeholder": "Order Number",
+      "order-info": "Order Info",
+      "order-info-placeholder": "Products, SKU ID, or PO #, etc",
+      "created-at": "Created On or After",
+      "created-at-placeholder": "Created On or After",
+      "updated-at": "Updated On or After",
+      "updated-at-placeholder": "Updated On or After"
+    },
+    "sort": {
+      "label": "Sort",
+      "number": "Draft Order Number",
+      "updated-at": "Updated At",
+      "customer-name": "Customer",
+      "total-price": "Total Price"
+    },
+    "title": "Orders Pending Approval",
+    "table": {
+      "draft-order": "Draft order",
+      "po-number": "PO number",
+      "update-date": "Update Date",
+      "customer": "Customer",
+      "status": "Status",
+      "total": "Total",
+      "details": "Details",
+      "no-orders-pending-approval": "No orders pending approval.",
+      "status-invoice-sent-label": "Pending Approval",
+      "status-open-label": "Pending Approval",
+      "status-rejected-label": "Declined",
+      "status-approved-label": "Pending Approval",
+      "status-po-automation-label": "Pending Approval"
+    }
+  },
+  "detail": {
+    "title": "Pending Order Review",
+    "order-number-title": "Draft Order",
+    "note": "Note from",
+    "no-pending-approval-order": "No pending approval order found",
+    "approve-success": "The Order was successfully Approved",
+    "reject-success": "Draft order has been rejected successfully",
+    "delete-success": "Delete pending approval order(s) successfully.",
+    "reorder-success": "Add {{count}} items to cart success",
+    "reorder-error": "Add to cart failed, {{error}}",
+    "reorder-error-with-description": "Add to cart failed",
+    "approve-button": "Approve",
+    "decline-button": "Decline",
+    "reorder-button": "Reorder",
+    "delete-button": "Delete"
+  },
+  "dialog": {
+    "reject-title": "Decline Order",
+    "reject-description": "Are you sure to Decline this order? Please provide a reason for rejection.",
+    "reject-confirm": "Decline",
+    "delete-title": "Delete Order",
+    "delete-description": "Are you sure you want to delete this order? This action cannot be undone.",
+    "delete-confirm": "Delete",
+    "location-title": "Location Mismatch",
+    "location-description": "The order is associated with {{locationName}}, but you're in a different account. Would you like to continue with the current account or switch to {{locationName}}?",
+    "location-confirm": "Continue Anyway",
+    "approve-title": "Approve Order",
+    "approve-description": "Are you sure to Approve this order?",
+    "approve-confirm": "Approve",
+    "cancel": "Cancel",
+    "switch-account": "Switch Account",
+    "reject-placeholder": "Enter rejection reason (max 500 characters)",
+    "reject-character-count": "{{count}}/500 characters"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "list": {
+    "filter": {
+      "email": "Correo Electrónico",
+      "email-placeholder": "Correo Electrónico"
+    },
+    "table": {
+      "first-name": "Nombre",
+      "last-name": "Apellido",
+      "email": "Correo Electrónico",
+      "role": "Rol",
+      "actions": "Acciones",
+      "no-users-found": "No se encontraron usuarios",
+      "delete-success": "El usuario del cliente ha sido eliminado",
+      "main-contact": "Contacto Principal",
+      "yes": "Sí",
+      "no": "No",
+      "view": "Ver",
+      "edit": "Editar",
+      "delete": "Eliminar",
+      "new-user": "Nuevo Usuario",
+      "title": "Usuarios",
+      "delete-title": "Eliminar Usuario del Cliente",
+      "delete-description": "¿Estás seguro de que deseas eliminar este Usuario del Cliente?",
+      "delete-confirm": "Sí, Eliminar",
+      "back-to-user-list": "Volver a la Lista de Usuarios"
+    }
+  },
+  "add": {
+    "title": "Crear Usuario",
+    "back-to-user-list": "Volver a la Lista de Usuarios",
+    "create": "Crear",
+    "cancel": "Cancelar",
+    "success": "El usuario del cliente ha sido guardado",
+    "select-role": "Por favor, selecciona un rol para las ubicaciones de la empresa seleccionadas.",
+    "first-name": "Nombre",
+    "last-name": "Apellido",
+    "email": "Correo Electrónico",
+    "company-locations": {
+      "select-role": "Selecciona un Rol",
+      "select-all": "Seleccionar todo",
+      "select-row": "Seleccionar fila",
+      "title": "Ubicaciones de la Empresa",
+      "role": "Rol",
+      "name": "Nombre de la Cuenta",
+      "company-address": "Dirección de la Empresa",
+      "city": "Ciudad",
+      "state": "Estado",
+      "zip": "Código Postal",
+      "country": "País",
+      "select-at-least-one": "Por favor, selecciona al menos una ubicación de la empresa.",
+      "select-role-for-selected": "Por favor, selecciona un rol para las ubicaciones de la empresa seleccionadas.",
+      "success": "Usuario actualizado con éxito",
+      "empty": "No hay ubicaciones de la empresa",
+      "save": "GUARDAR",
+      "cancel": "CANCELAR"
+    },
+    "form": {
+      "first-name-required": "Nombre es requerido",
+      "last-name-required": "Apellido es requerido",
+      "email-required": "Correo Electrónico es requerido",
+      "email-invalid": "Dirección de correo electrónico inválida",
+      "company-locations-required": "Por favor, selecciona al menos una ubicación de la empresa."
+    }
+  },
+  "details": {
+    "back-to-user-list": "Volver a la Lista de Usuarios",
+    "title": "Usuario",
+    "account-info": "INFORMACIÓN DE LA CUENTA",
+    "name": "Nombre",
+    "email": "Correo Electrónico",
+    "company": "Empresa",
+    "main-contact": "Contacto Principal"
+  }
+}

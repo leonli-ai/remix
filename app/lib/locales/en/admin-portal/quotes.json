@@ -1,0 +1,28 @@
+{
+  "empty-search-result": {
+    "title": "No quotes found",
+    "description": "Try changing the search term"
+  },
+  "table": {
+    "quote-list-singular": "Quote List",
+    "quote-list-plural": "Quote List",
+    "quote-number": "Quote #",
+    "status": "Status",
+    "po-number": "PO Number",
+    "created-at": "Created At",
+    "expiration-date": "Valid Until",
+    "owner": "Owner",
+    "details": "Details"
+  },
+  "pagination": {
+    "total-records": "Total of {{count}} records"
+  },
+  "filter": {
+    "quote-number-placeholder": "Quote #",
+    "status-placeholder": "Status",
+    "po-number-placeholder": "PO Number",
+    "created-at-placeholder": "Created At",
+    "expiration-date-placeholder": "Valid Until",
+    "customer-placeholder": "Owner"
+  }
+}

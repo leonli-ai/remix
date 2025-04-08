@@ -1,0 +1,67 @@
+{
+  "title": "PO a Pedido",
+  "company-location": "Ubicación de la Empresa",
+  "company-location-placeholder": "Seleccionar Ubicación de la Empresa",
+  "payment-terms": "Términos de Pago",
+  "payment-terms-placeholder": "Seleccionar Términos de Pago",
+  "preview-button": "Vista Previa",
+  "choose-location-button": "Seleccionar Ubicación",
+  "upload-file-button": "Subir Archivo",
+  "upload-file": "Importar Archivo",
+  "upload-file-placeholder": "Aceptar (.PDF, .JPEG, .PNG, .BMP) archivo. Max 10MB, 5 páginas.",
+  "upload-file-type-error": "Tipo de archivo inválido. Por favor, sube un archivo (.PDF, .JPEG, .PNG, .BMP) de hasta 10MB",
+  "upload-file-error": "Subida fallida",
+  "parse-file-error": "Parse fallido",
+  "parse-file-success": "Parse exitoso",
+  "no-matching-shipping-address": "No se encontró una dirección de envío coincidente para el cliente",
+  "status": {
+    "waiting": "Esperando",
+    "uploading": "Subiendo",
+    "parsing": "Parseando",
+    "success": "Exitoso",
+    "error": "Error"
+  },
+  "modal": {
+    "choose-location": {
+      "title": "Seleccionar Ubicación de la Empresa",
+      "description": "Ubicación de la empresa inválida, por favor selecciona una ubicación de la empresa válida abajo",
+      "select-label": "Ubicación de la Empresa",
+      "select-placeholder": "Seleccionar Ubicación de la Empresa",
+      "confirm": "Confirmar",
+      "cancel": "Cancelar"
+    },
+    "choose-shipping-method": {
+      "title": "Seleccionar Método de Envío",
+      "description": "Por favor selecciona un método de envío válido abajo",
+      "select-label": "Método de Envío",
+      "select-placeholder": "Seleccionar Método de Envío",
+      "confirm": "Confirmar",
+      "cancel": "Cancelar"
+    }
+  },
+  "preview": {
+    "title": "Vista Previa",
+    "back": "Atrás",
+    "information-card": {
+      "first-name": "Nombre",
+      "last-name": "Apellido",
+      "email-address": "Correo Electrónico",
+      "phone-number": "Teléfono",
+      "company-account": "Cuenta de Empresa",
+      "shipping-address": "Dirección de Envío",
+      "po-number": "Número de PO"
+    },
+    "table": {
+      "customer-product": "Producto del Cliente",
+      "sku": "SKU",
+      "item": "Artículo",
+      "qty": "Cantidad",
+      "uom": "UOM",
+      "price": "Precio",
+      "invalid-price": "Precio inválido en esta ubicación",
+      "subtotal": "Subtotal"
+    },
+    "action-button": "Convertir a pedido",
+    "create-order-success": "Pedido creado con éxito"
+  }
+}

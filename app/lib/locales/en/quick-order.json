@@ -1,0 +1,71 @@
+{
+  "page-title": "Quick Order",
+  "list-head-title": "Product List",
+  "list-head-warning": "Please add at least one item",
+  "table": {
+    "product": "Product",
+    "qty": "Qty",
+    "uom": "UOM",
+    "price": "Price",
+    "action": "Action",
+    "add-more-products": "Add more products",
+    "clean-all": "Clean all",
+    "add-to-cart": "Add to cart",
+    "add-to-list": "Add to list",
+    "add-to-cart-success": "Successfully added {{count}} products to cart",
+    "add-to-list-success": "Successfully added {{count}}   products to list",
+    "add-to-cart-error": "Failed to add to cart",
+    "add-to-list-error": "Failed to add to list",
+    "search-empty-result": "No matches found. Try a valid product code or keyword.",
+    "search-field-placeholder": "Enter Product Name or Item Number",
+    "qty-placeholder": "Qty",
+    "add-to-list-button": "Add to List",
+    "create-and-add-button": "Create and Add",
+    "add-to-cart-button": "Add to Cart",
+    "view-cart": "View Cart",
+    "add-to-cart-error-description": "Please check the items and quantity in cart",
+    "add-to-cart-warning": "Please add at least one product"
+  },
+  "upload-order": {
+    "title": "Upload Your Products",
+    "drag-drop": "Drag & drop a {{fileTypes}} File or",
+    "choose-file": "Choose File",
+    "file-structure-info": "What File Structure Is Accepted",
+    "import-title": "Import File Excel .CSV",
+    "import-instructions": "Follow these steps to import multiple products using a .CSV, .XLSX or .ODS file",
+    "template-download": "Click here to download the template.{{fileType}}",
+    "enter-product-ids": "Enter product ids in Column A and required QTY in Column B. Please do not include any prefix, dash or other punctuation in the id.",
+    "save-and-upload": "Save the file to your computer (recommended .CSV format) and upload it to the platform."
+  },
+  "paste-order": {
+    "title": "Paste Your Products",
+    "instructions": "Copy and paste your order with the item number, quantity (and optionally units), separated by spaces, semicolons or commas.",
+    "placeholder": "Supplier Product #/Customer Code,Qty (e.g., 99832RJ,3)",
+    "add-products-button": "Add Products",
+    "invalid-format-error": "Invalid format",
+    "invalid-format-description": "Invalid format. Please ensure the format is 'Supplier Product #/Customer Code, Qty'."
+  },
+  "import-validation": {
+    "title": "Import Validation",
+    "items-count": "{{count}} items",
+    "success-count": "{{count}} products were successfully imported, and please check the ones with error.",
+    "product-number": "Product #",
+    "quantity": "Qty",
+    "uom": "UOM",
+    "message": "Message",
+    "out-of-stock": "Out of stock",
+    "product-not-found": "The product was not found",
+    "product-quantity-not-correct": "The product qty is not correct",
+    "product-was-not-found": "The product was not found",
+    "valid": "Valid"
+  },
+  "validate-action": {
+    "min-quantity": "minimum quantity is {{minQuantity}}",
+    "max-quantity": "maximum quantity is {{maxQuantity}}",
+    "quantity-rule-error": "Quantity rule error, {{message}}",
+    "out-of-stock": "Out of stock max quantity {{maxQuantity}}",
+    "update-success": "Successfully updated quote items",
+    "update-error": "Update quote items failed",
+    "increment-quantity": "Quantity must be a multiple of {{increment}}"
+  }
+}

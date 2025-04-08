@@ -1,0 +1,75 @@
+{
+  "list": {
+    "filter": {
+      "email": "Email",
+      "email-placeholder": "Email"
+    },
+    "table": {
+      "first-name": "First Name",
+      "last-name": "Last Name",
+      "email": "Email Address",
+      "role": "Role",
+      "actions": "Actions",
+      "no-users-found": "No users found",
+      "delete-success": "The customer user has been deleted",
+      "main-contact": "Main Contact",
+      "yes": "Yes",
+      "no": "No",
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete",
+      "new-user": "New User",
+      "title": "Users",
+      "delete-title": "Delete Customer User",
+      "delete-description": "Are you sure you want to delete this Customer User?",
+      "delete-confirm": "Yes, Delete",
+      "back-to-user-list": "Back to User List"
+    }
+  },
+  "add": {
+    "title": "Create User",
+    "back-to-user-list": "Back to User List",
+    "create": "Create",
+    "cancel": "Cancel",
+    "success": "The customer user has been saved",
+    "select-role": "Please select a role for the selected company location(s).",
+    "first-name": "First Name",
+    "last-name": "Last Name",
+    "email": "Email Address",
+    "company-locations": {
+      "select-role": "Select a Role",
+      "select-all": "Select all",
+      "select-row": "Select row",
+      "title": "Company Locations",
+      "role": "Role",
+      "name": "Account Name",
+      "company-address": "Company Address",
+      "city": "City",
+      "state": "State",
+      "zip": "Zip/Postal Code",
+      "country": "Country",
+      "select-at-least-one": "Please select at least one company location.",
+      "select-role-for-selected": "Please select a role for the selected company location(s).",
+      "success": "User updated successfully",
+      "empty": "No company locations",
+      "save": "SAVE",
+      "cancel": "CANCEL"
+    },
+    "form": {
+      "first-name-required": "First Name is required",
+      "last-name-required": "Last Name is required",
+      "email-required": "Email is required",
+      "email-invalid": "Invalid email address",
+      "company-locations-required": "Please select at least one company location."
+    }
+  },
+  "details": {
+    "back-to-user-list": "Back to User List",
+    "title": "User",
+    "account-info": "ACCOUNT INFO",
+    "name": "Name",
+    "email": "Email",
+    "company": "Company",
+    "main-contact": "Main Contact"
+  }
+}
