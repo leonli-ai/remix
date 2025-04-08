@@ -2,8 +2,9 @@
   "name": "leon-app",
   "private": true,
   "scripts": {
-    "build": "npm run setup && remix vite:build",
+    "build": "remix vite:build",
     "dev": "shopify app dev",
+    "predev": "prisma generate && prisma migrate deploy",
     "config:link": "shopify app config link",
     "generate": "shopify app generate extension",
     "deploy": "shopify app deploy",
@@ -15,6 +16,7 @@
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "shopify": "shopify",
     "prisma": "prisma",
+    "postinstall": "prisma generate && prisma migrate deploy",
     "graphql-codegen": "graphql-codegen",
     "vite": "vite"
   },
