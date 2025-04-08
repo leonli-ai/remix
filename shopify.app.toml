@@ -3,7 +3,7 @@
 client_id = "1fcb409f5d83def5b640c8369bd24d23"
 name = "leon-app"
 handle = "leon-app-2"
-application_url = "https://remix-ten-omega.vercel.app/"
+application_url = "https://remix-plum-nine.vercel.app/"
 embedded = false
 
 [build]
