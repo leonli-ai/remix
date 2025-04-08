@@ -148,7 +148,6 @@ export default function App() {
             <Outlet />
           </QueryClientProvider>
           <ScrollRestoration />
-          <script src="/apps/customer-account/env.js"></script>
           <Scripts />
         </div>
       </>
@@ -200,7 +199,6 @@ export default function App() {
         </QueryClientProvider>
 
         <ScrollRestoration />
-        <script src="/apps/customer-account/env.js"></script>
         <Scripts />
       </body>
     </html>
