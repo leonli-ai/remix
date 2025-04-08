@@ -3,7 +3,7 @@
 client_id = "1fcb409f5d83def5b640c8369bd24d23"
 name = "leon-app"
 handle = "leon-app-2"
-application_url = "https://remix-plum-nine.vercel.app/"
+application_url = "https://loop-until-fotos-homeland.trycloudflare.com"
 embedded = false
 
 [build]
@@ -27,9 +27,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://remix-plum-nine.vercel.app/auth/callback",
-  "https://remix-plum-nine.vercel.app/auth/shopify/callback",
-  "https://remix-plum-nine.vercel.app/api/auth/callback"
+  "https://loop-until-fotos-homeland.trycloudflare.com/auth/callback",
+  "https://loop-until-fotos-homeland.trycloudflare.com/auth/shopify/callback",
+  "https://loop-until-fotos-homeland.trycloudflare.com/api/auth/callback"
 ]
 
 [pos]
