@@ -3,11 +3,12 @@
 client_id = "1fcb409f5d83def5b640c8369bd24d23"
 name = "leon-app"
 handle = "leon-app-2"
-application_url = "https://remix-plum-nine.vercel.app/"
+application_url = "https://construct-individual-enough-consumers.trycloudflare.com"
 embedded = false
 
 [build]
 include_config_on_deploy = true
+automatically_update_urls_on_dev = true
 
 [webhooks]
 api_version = "2025-01"
@@ -25,7 +26,11 @@ api_version = "2025-01"
 scopes = "write_products"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [
+  "https://construct-individual-enough-consumers.trycloudflare.com/auth/callback",
+  "https://construct-individual-enough-consumers.trycloudflare.com/auth/shopify/callback",
+  "https://construct-individual-enough-consumers.trycloudflare.com/api/auth/callback"
+]
 
 [pos]
 embedded = false
