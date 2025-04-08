@@ -22,7 +22,7 @@
     "graphql-codegen": "graphql-codegen",
     "vite": "vite",
     "cloudflare": "cloudflared tunnel --url localhost:3000",
-    "format": "prettier --write .",
+    "format": "prettier --write ."
   },
   "type": "module",
   "engines": {
