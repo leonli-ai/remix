@@ -17,12 +17,12 @@
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "shopify": "shopify",
     "prisma": "prisma",
-    "postinstall": "prisma generate",
+    "postinstall": "prisma generate && prisma migrate deploy",
     "prisma:migrate": "npx prisma migrate deploy",
     "graphql-codegen": "graphql-codegen",
     "vite": "vite",
     "cloudflare": "cloudflared tunnel --url localhost:3000",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
   },
   "type": "module",
   "engines": {
