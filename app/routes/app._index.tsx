@@ -170,6 +170,7 @@ export default function Index() {
       headers: {
         'Content-Type': 'application/json',
       },
+      method: 'POST',
       body: JSON.stringify({
         token: sessionToken
       })
