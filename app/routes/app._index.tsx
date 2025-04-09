@@ -55,7 +55,7 @@ export default function Index() {
 
   
   const redirect = async ()=>{
-    window.location.href = 'https://localhost:3000'
+    window.parent.open('https://localhost:3000')
     if(!shopify.config) {
       return
     }
