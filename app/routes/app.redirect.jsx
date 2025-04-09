@@ -1,4 +1,5 @@
 import { json } from "@remix-run/node";
+import crypto from 'crypto';
 
 export const action = async ({ request }) => {
   if (request.method !== "POST") {
@@ -9,7 +10,6 @@ export const action = async ({ request }) => {
 
   
   // Generate HMAC signature
-  const crypto = require('crypto');
   const secret = process.env.SHOPIFY_API_SECRET || '';
   const hmac = crypto.createHmac('sha256', secret);
   hmac.update(JSON.stringify(requestBody));
