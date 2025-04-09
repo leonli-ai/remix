@@ -166,11 +166,13 @@ export default function Index() {
   };
 
   async function fetchStaffDetails(sessionToken) {
-    const response = await fetch('https://leon-env.myshopify.com/admin/api/2025-04/staff.json', {
+    const response = await fetch('/app/staff/detail', {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${sessionToken}`
-      }
+      },
+      body: JSON.stringify({
+        token: sessionToken
+      })
     });
 
     const staffData = await response.json();
