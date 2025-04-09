@@ -5,6 +5,7 @@ import {
   Button,
   Text
 } from "@shopify/polaris";
+import { getSessionToken } from '@shopify/app-bridge/utilities';
 import { authenticate } from "../shopify.server";
 import { SetupGuide } from "../components/admin-portal/SetupGuide";
 import { useAppBridge } from "@shopify/app-bridge-react";
@@ -173,6 +174,24 @@ export default function Index() {
       console.error(e);
     }
   };
+
+  const app = useAppBridge();
+
+  useEffect(() => {
+    console.log('Session Token: start');
+    const getSessionTokenAsync = async () => {
+      try {
+        const sessionToken = await getSessionToken(app);
+        console.log('Session Token:', sessionToken);
+        // 你可以在这里将 sessionToken 发送到你的后端
+      } catch (error) {
+        console.error('Error fetching session token:', error);
+      }
+    };
+
+    getSessionTokenAsync();
+  }, [app]);
+
 
   if (!showGuide) return <Button onClick={() => setShowGuide(true)}>Show Setup Guide</Button>;
 
