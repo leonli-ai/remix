@@ -1,5 +1,6 @@
 import { json } from "@remix-run/node";
 import crypto from 'crypto';
+import { redirect } from "@remix-run/node";
 
 export const action = async ({ request }) => {
   if (request.method !== "POST") {
@@ -20,8 +21,6 @@ export const action = async ({ request }) => {
 
   const timestamp = new Date().getTime();
   
-    return Response.redirect(`http://localhost:3000?token=${requestBody.token}&hmac=${signature}&timestamp=${timestamp}`, {
-      status: 302
-    });
+    return redirect(`http://localhost:3000?token=${requestBody.token}&hmac=${signature}&timestamp=${timestamp}`);
 };
 
