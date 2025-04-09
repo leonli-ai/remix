@@ -9,7 +9,7 @@ export const action = async ({ request }) => {
 
   let res = null;
   try {
-    res = fetchStaffDetails(requestBody.token)
+    res = await fetchStaffDetails(requestBody.token)
   }catch (e) {
     res = e
   }
