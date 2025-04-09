@@ -38,7 +38,7 @@ export default function Index() {
 
 
   async function fetchStaffDetails(sessionToken: string) {
-    const response = await fetch('/app/staff/detail', {
+    const response = await fetch('/app/redirect', {
       headers: {
         'Content-Type': 'application/json',
       },
