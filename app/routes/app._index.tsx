@@ -10,7 +10,7 @@ import { authenticate } from "../shopify.server";
 import { SetupGuide } from "../components/admin-portal/SetupGuide";
 import { useAppBridge } from "@shopify/app-bridge-react";
 import { Redirect } from "@shopify/app-bridge/actions";
-import type { ClientApplication } from "@shopify/app-bridge";
+import createApp, { ClientApplication } from "@shopify/app-bridge";
 import { useShopTheme } from "~/hooks/use-customers";
 // import { BILLING_CONFIG } from "~/config/billing";
 
@@ -31,6 +31,11 @@ export default function Index() {
   const { themeId, isLoading, fetchShopTheme } = useShopTheme();
 
   const shopify = useAppBridge();
+
+  const app = createApp({
+    apiKey: shopify.config.apiKey, // API key from the Partner Dashboard
+    host: shopify.config.host as string, // host from URL search parameter
+  });
 
   useEffect(() => {
     fetchShopTheme();
@@ -174,8 +179,6 @@ export default function Index() {
       console.error(e);
     }
   };
-
-  const app = useAppBridge();
 
   useEffect(() => {
     console.log('Session Token: start');
