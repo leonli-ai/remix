@@ -32,11 +32,6 @@ export default function Index() {
 
   const shopify = useAppBridge();
 
-  const app = createApp({
-    apiKey: shopify.config.apiKey, // API key from the Partner Dashboard
-    host: shopify.config.host as string, // host from URL search parameter
-  });
-
   useEffect(() => {
     fetchShopTheme();
   }, []);
@@ -181,7 +176,14 @@ export default function Index() {
   };
 
   useEffect(() => {
-    console.log('Session Token: start');
+    console.log('Session Token: start', shopify.config);
+    if(!shopify.config) {
+      return
+    }
+    const app = createApp({
+      apiKey: shopify.config.apiKey, // API key from the Partner Dashboard
+      host: shopify.config.host as string, // host from URL search parameter
+    });
     const getSessionTokenAsync = async () => {
       try {
         const sessionToken = await getSessionToken(app);
@@ -193,7 +195,7 @@ export default function Index() {
     };
 
     getSessionTokenAsync();
-  }, [app]);
+  }, [shopify]);
 
 
   if (!showGuide) return <Button onClick={() => setShowGuide(true)}>Show Setup Guide</Button>;
