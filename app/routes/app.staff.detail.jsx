@@ -1,5 +1,4 @@
 import { json } from "@remix-run/node";
-import BreadPayAppsClient from '~/breadPay-apps'; // or "@remix-run/server-runtime"
 
 export const action = async ({ request }) => {
   if (request.method !== "POST") {
