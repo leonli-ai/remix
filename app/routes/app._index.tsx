@@ -46,16 +46,6 @@ export default function Index() {
     });
   }
 
-  const goToThemeEditor = () => {
-    if (isLoading || !themeId) return;
-
-    const redirect = Redirect.create(shopify as unknown as ClientApplication<any>);
-    console.log("Redirecting to theme editor", Redirect.Action.ADMIN_PATH);
-    redirect.dispatch(Redirect.Action.ADMIN_PATH, {
-      path: `/themes/${themeId}/editor`,
-      newContext: false,
-    });
-  };
 
   const ITEMS = [
     {
@@ -175,6 +165,18 @@ export default function Index() {
     }
   };
 
+  async function fetchStaffDetails(sessionToken) {
+    const response = await fetch('https://leon-env.myshopify.com/admin/api/2025-04/staff.json', {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${sessionToken}`
+      }
+    });
+
+    const staffData = await response.json();
+    console.log('Staff Information:', staffData);
+  }
+
   useEffect(() => {
     console.log('Session Token: start', shopify.config);
     if(!shopify.config) {
@@ -187,6 +189,7 @@ export default function Index() {
     const getSessionTokenAsync = async () => {
       try {
         const sessionToken = await getSessionToken(app);
+        await fetchStaffDetails(sessionToken)
         console.log('Session Token:', sessionToken);
         // 你可以在这里将 sessionToken 发送到你的后端
       } catch (error) {
