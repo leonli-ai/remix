@@ -1,0 +1,51 @@
+# The version of APIs your extension will receive. Learn more:
+# https://shopify.dev/docs/api/usage/versioning
+api_version = "2024-07"
+
+[[extensions]]
+name = "Ashely Plcc Card"
+handle = "ashely-plcc-card"
+type = "payments_extension"
+
+
+merchant_label = "Ashley Stewart Credit Card"
+payment_session_url = "https://as-shopify-qa-eus.azurewebsites.net/app/payment_session"
+refund_session_url = "https://as-shopify-qa-eus.azurewebsites.net/app/refund_session"
+capture_session_url = "https://as-shopify-qa-eus.azurewebsites.net/app/capture_session"
+void_session_url  = "https://as-shopify-qa-eus.azurewebsites.net/app/void_session"
+supports_oversell_protection = false
+# List of ISO 3166 (alpha-2) country codes your app is available for installation by merchants. Learn more:
+# https://www.iso.org/iso-3166-country-codes.html
+supported_countries = ["US"]
+# List payment method names that your payment extension will support. Learn more:
+# https://github.com/activemerchant/payment_icons/blob/master/db/payment_icons.yml
+supported_payment_methods = []
+supports_3ds = false
+supports_installments = false
+supports_deferred_payments = false
+test_mode_available = true
+
+# buyer_label = ""
+# [[extensions.buyer_label_translations]]
+# label = "translation"
+# locale = "fr"
+
+# [[extensions.buyer_label_translations]]
+# label = "translation"
+# locale = "da"
+
+# UI Extension
+ui_extension_handle = "ashely-plcc-form"
+
+# [[extensions.checkout_payment_method_fields]]
+# key = "field1"
+# type = "string"
+# required = true
+#
+# [[extensions.checkout_payment_method_fields]]
+# key = "field2"
+# type = "string"
+# required = true
+
+[[extensions.targeting]]
+target = "payments.custom-onsite.render"

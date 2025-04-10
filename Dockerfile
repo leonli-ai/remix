@@ -1,47 +1,19 @@
-FROM node:18.20.3-alpine3.18 AS builder
-
-WORKDIR /app
-
-RUN npm install -g pnpm
-
-COPY package.json pnpm-lock.yaml .env ./
-
-COPY prisma ./prisma
-
-RUN pnpm install --frozen-lockfile
-RUN pnpm prisma generate
-
-COPY . .
-RUN pnpm run build
-
-FROM node:18.20.3-alpine3.18
-
-WORKDIR /app
-
-ENV NODE_ENV=production
-
-RUN apk add --no-cache \
-    graphicsmagick \
-    ghostscript
-
-RUN npm install -g pnpm
-
-COPY package.json pnpm-lock.yaml ./
-COPY prisma ./prisma
-
-RUN pnpm install --frozen-lockfile --prod && \
-    pnpm prisma generate && \
-    pnpm remove @shopify/cli && \
-    pnpm store prune
-
-COPY --from=builder /app/build ./build
-COPY --from=builder /app/public ./public
-COPY docker-entrypoint.sh /docker-entrypoint.sh
-
-RUN chmod +x /docker-entrypoint.sh
+FROM node:18-alpine
 
 EXPOSE 3000
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["pnpm", "run", "start"]
+WORKDIR /app
+COPY . .
 
+ENV NODE_ENV=production
+
+RUN npm install --omit=dev
+# Remove CLI packages since we don't need them in production by default.
+# Remove this line if you want to run CLI commands in your container.
+RUN npm remove @shopify/app @shopify/cli
+RUN npm run build
+
+# You'll probably want to remove this in production, it's here to make it easier to test things!
+RUN rm -f prisma/dev.sqlite
+
+CMD ["npm", "run", "docker-start"]

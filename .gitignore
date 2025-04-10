@@ -10,26 +10,9 @@ node_modules
 /prisma/dev.sqlite-journal
 database.sqlite
 
-
+.env
 package-lock.json
 yarn.lock
-
-/extensions/*/dist
-
-# Ignore shopify files created during app dev
-.shopify/*
-.shopify.lock
-
-shopify.app.kent-app.toml
-shopify.app.jyb-app.toml
-
-.history
-
-public/assets
-public/apps/
-
-.DS_Store
-.idea
-.vscode
-
-.cursorrules
+/node_modules
+/.idea
+/.vscode

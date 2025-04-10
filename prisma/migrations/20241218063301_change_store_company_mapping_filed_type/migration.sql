@@ -1,3 +1,0 @@
--- AlterTable
-ALTER TABLE "Store_Company_Mapping" ALTER COLUMN "skuId" SET DATA TYPE VARCHAR(255),
-ALTER COLUMN "companyId" SET DATA TYPE VARCHAR(255);
