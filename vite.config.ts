@@ -3,7 +3,6 @@
 // stop passing in HOST, so we can remove this workaround after the next major release.
 import { vitePlugin as remix } from "@remix-run/dev";
 import { defineConfig } from "vite";
-import tsconfigPaths from "vite-tsconfig-paths";
 
 
 if (
@@ -26,6 +25,5 @@ export default defineConfig({
         v3_lazyRouteDiscovery: true,
       },
     }),
-    tsconfigPaths(),
   ],
 });

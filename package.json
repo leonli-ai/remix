@@ -1,6 +1,7 @@
 {
   "name": "ashley-custom-checkout-app",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "remix build",
     "remix:dev": "remix dev",
