@@ -5,6 +5,7 @@
     "build": "remix build",
     "remix:dev": "remix dev",
     "predev": "prisma generate && prisma migrate deploy",
+    "postinstall": "prisma generate && prisma migrate deploy",
     "dev": "shopify app dev",
     "config:link": "shopify app config link",
     "config:push": "shopify app config push",
