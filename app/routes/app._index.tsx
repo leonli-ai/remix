@@ -22,7 +22,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     const text = { shopDomain: session.shop, apiKey: apiKey };
     return text;
   } catch (error) {
-    console.log("app loader error", error);
+    console.log("app loader error", error, JSON.stringify(error));
     return null
   }
 };
