@@ -13,7 +13,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   try {
     const { session } = await authenticate.admin(request);
   } catch (error) {
-    console.log("app loader error", error);
+    console.log("app loader error", error, JSON.stringify(error));
     return null
   }
 };
