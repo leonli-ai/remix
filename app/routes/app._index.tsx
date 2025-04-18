@@ -69,8 +69,8 @@ export default function Index() {
 
   return (
     <Box>
-      <Link target={'_blank'} url={'/app/test'} />
-      <Button onClick={redirect}>Show Setup Guide</Button>
+      <Link target={'_blank'} url={'/app/test'} >redirect</Link>
+      <Button onClick={redirect}>get redirect url</Button>
     </Box>
   );
 }
