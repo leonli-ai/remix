@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import type { LoaderFunctionArgs } from "@remix-run/node";
 import {
-  Page,
+  Link,
   Button,
-  Text
+  Box
 } from "@shopify/polaris";
 import { getSessionToken } from '@shopify/app-bridge/utilities';
 import { authenticate } from "../shopify.server";
@@ -28,14 +28,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
 };
 
 export default function Index() {
-  const { themeId, isLoading, fetchShopTheme } = useShopTheme();
 
   const shopify = useAppBridge();
-
-  useEffect(() => {
-    fetchShopTheme();
-  }, []);
-
 
   async function fetchStaffDetails(sessionToken: string) {
     const response = await fetch('/app/redirect', {
@@ -47,15 +41,14 @@ export default function Index() {
         token: sessionToken
       })
     });
-
+    debugger
     const staffData = await response.json();
     console.log('Staff Information:', staffData);
   }
 
 
-  
+
   const redirect = async ()=>{
-    window.parent.open('https://localhost:3000')
     if(!shopify.config) {
       return
     }
@@ -72,9 +65,12 @@ export default function Index() {
       console.error('Error fetching session token:', error);
     }
   }
-  
+
 
   return (
-    <Button onClick={redirect}>Show Setup Guide</Button>
+    <Box>
+      <Link target={'_blank'} url={'/app/test'} />
+      <Button onClick={redirect}>Show Setup Guide</Button>
+    </Box>
   );
 }
