@@ -35,9 +35,6 @@ function formatPathToTitle(path: string): string {
 export async function loader({ request }: LoaderFunctionArgs) {
   const headers = request.headers;
   const proxyPrefix = headers.get("X-Shopify-Proxy-Prefix");
-  console.log("proxyPrefix===", proxyPrefix);
-  console.log("header===", headers);
-  console.log("request===", request);
   return json({ proxyPrefix });
 }
 

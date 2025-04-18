@@ -15,15 +15,11 @@ import { useShopTheme } from "~/hooks/use-customers";
 // import { BILLING_CONFIG } from "~/config/billing";
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  console.log("/app._index:loader");
-  const apiKey = process.env.SHOPIFY_API_KEY;
   try {
     const { session } = await authenticate.admin(request);
-    const text = { shopDomain: session.shop, apiKey: apiKey };
-    return text;
-  } catch (error) {
-    console.log("app loader error", error, JSON.stringify(error));
-    return null
+    return { shop: session.shop };
+  }catch (e){
+    console.log("app-error", JSON.stringify(e))
   }
 };
 

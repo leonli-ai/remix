@@ -8,13 +8,11 @@ import {authenticate} from '~/shopify.server';
 
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  console.log("/app._index:loader");
-  const apiKey = process.env.SHOPIFY_API_KEY;
   try {
     const { session } = await authenticate.admin(request);
-  } catch (error) {
-    console.log("app loader error", error, JSON.stringify(error));
-    return null
+    return { shop: session.shop };
+  }catch (e){
+    console.log("app-test-error", JSON.stringify(e))
   }
 };
 
