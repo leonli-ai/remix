@@ -12,8 +12,6 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   const apiKey = process.env.SHOPIFY_API_KEY;
   try {
     const { session } = await authenticate.admin(request);
-    const text = { shopDomain: session.shop, apiKey: apiKey };
-    return text;
   } catch (error) {
     console.log("app loader error", error);
     return null
