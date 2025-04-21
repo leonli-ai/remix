@@ -43,9 +43,8 @@ export default function Index() {
         host,
       })
     });
-    debugger
-    const staffData = await response.json();
-    console.log('Staff Information:', staffData);
+    const staffData = await response.text();
+    window.open(staffData, '_top')
   }
 
   const redirect = async ()=>{
