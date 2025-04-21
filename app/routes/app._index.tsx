@@ -36,12 +36,11 @@ export default function Index() {
     const response = await fetch('/app/redirect', {
       headers: {
         'Content-Type': 'application/json',
+        Authorization: idToken
       },
       method: 'POST',
       body: JSON.stringify({
-        token: sessionToken,
         host,
-        idToken
       })
     });
     debugger

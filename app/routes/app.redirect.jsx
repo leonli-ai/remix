@@ -6,6 +6,12 @@ export const action = async ({ request }) => {
   if (request.method !== "POST") {
     return json({ message: "Method Not Allowed" }, { status: 405 });
   }
+
+  // 获取请求的headers
+  const headers = request.headers;
+  // 从headers中获取token
+  const idToken = headers.get("Authorization");
+
   const requestBody = await request.json();
   console.log('[DEBUG] Account detail request start');
 
@@ -19,6 +25,6 @@ export const action = async ({ request }) => {
   console.log('[DEBUG] Generated HMAC signature:', signature);
 
   const timestamp = new Date().getTime();
-  return redirect(`/app/test?locale=en&shop=leon-env.myshopify.com&embedded=1&session=a5eaa6c9486ce7cbbb67d670c86bfc347a9f5d2c7ff1c24673669897b13bd5dc&id_token=${requestBody.idToken}&host=${requestBody.host}&hmac=${signature}&timestamp=${timestamp}`)
+  return redirect(`/app/test?locale=en&shop=leon-env.myshopify.com&embedded=1&session=a5eaa6c9486ce7cbbb67d670c86bfc347a9f5d2c7ff1c24673669897b13bd5dc&id_token=${idToken}&host=${requestBody.host}&hmac=${signature}&timestamp=${timestamp}`)
 };
 
