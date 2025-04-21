@@ -60,7 +60,7 @@ export default function Index() {
     try {
       const sessionToken = await getSessionToken(app);
       const idToken = await shopify.idToken()
-      await fetchStaffDetails(sessionToken, sessionToken, idToken)
+      await fetchStaffDetails(sessionToken, shopify.config.host as string, idToken)
       console.log('Session Token:', sessionToken);
       // 你可以在这里将 sessionToken 发送到你的后端
     } catch (error) {
