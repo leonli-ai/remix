@@ -19,6 +19,6 @@ export const action = async ({ request }) => {
   console.log('[DEBUG] Generated HMAC signature:', signature);
 
   const timestamp = new Date().getTime();
-  return `/app/test?token=${requestBody.token}&hmac=${signature}&timestamp=${timestamp}`
+  return `/app/test?shop=leon-env.myshopify.com&embedded=1&session=${requestBody.token}&id_token=${requestBody.idToken}&host=${requestBody.host}&hmac=${signature}&timestamp=${timestamp}`
 };
 

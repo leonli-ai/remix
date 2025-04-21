@@ -7,8 +7,7 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     const {redirect} = await authenticate.admin(request);
     return redirect('/');
   } catch (error) {
-    const mes = await error.text()
-    console.error("Error authenticating admin", error, mes);
+    console.log(error)
   }
   return null
 };

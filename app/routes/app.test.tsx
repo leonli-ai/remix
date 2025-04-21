@@ -11,8 +11,8 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
   try {
     const { session } = await authenticate.admin(request);
     return { shop: session.shop };
-  }catch (e){
-    console.log("app-test-error", e,JSON.stringify(e))
+  }catch (error){
+
   }
 };
 
