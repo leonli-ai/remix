@@ -22,6 +22,8 @@ export const action = withCors(async ({ request }: ActionFunctionArgs) => {
     // 验证Shopify认证
     const { session } = await authenticate.admin(request);
 
+    console.log('request', JSON.stringify(request));
+
     // 只接受POST请求
     if (request.method !== 'POST') {
       return json({ error: '方法不允许' }, { status: 405 });
