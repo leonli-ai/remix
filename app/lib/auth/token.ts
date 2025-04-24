@@ -107,6 +107,11 @@ export class TokenManager {
     try {
       const privateKey = KeyManager.getPrivateKey();
 
+      // 记录详细的调试信息
+      console.log('Payload:', JSON.stringify(payload));
+      console.log('Private Key Type:', typeof privateKey);
+      console.log('Private Key Length:', privateKey.length);
+
       const token = jwt.sign(payload, privateKey, {
         algorithm: 'RS256',
         expiresIn
@@ -120,13 +125,27 @@ export class TokenManager {
 
       return token;
     } catch (error) {
-      loggerService.error(`${this.CLASS_NAME}.${METHOD}: 生成Token失败`, {
-        error,
-        type: payload.type,
-        customerId: payload.customerId,
-        shopId: payload.shopId
-      });
-      throw new Error(`生成${payload.type} token失败`);
+      // 记录详细的错误信息
+      console.error('JWT Sign Error:', error);
+
+      if (error instanceof Error) {
+        loggerService.error(`${this.CLASS_NAME}.${METHOD}: 生成Token失败`, {
+          errorMessage: error.message,
+          errorStack: error.stack,
+          type: payload.type,
+          customerId: payload.customerId,
+          shopId: payload.shopId
+        });
+      } else {
+        loggerService.error(`${this.CLASS_NAME}.${METHOD}: 生成Token失败`, {
+          error,
+          type: payload.type,
+          customerId: payload.customerId,
+          shopId: payload.shopId
+        });
+      }
+
+      throw new Error(`生成${payload.type} token失败: ${error instanceof Error ? error.message : '未知错误'}`);
     }
   }
 
@@ -140,6 +159,11 @@ export class TokenManager {
     try {
       const publicKey = KeyManager.getPublicKey();
 
+      // 记录详细的调试信息
+      console.log('Token:', token.substring(0, 20) + '...');
+      console.log('Public Key Type:', typeof publicKey);
+      console.log('Public Key Length:', publicKey.length);
+
       const decoded = jwt.verify(token, publicKey, {
         algorithms: ['RS256']
       }) as TokenPayload;
@@ -152,11 +176,23 @@ export class TokenManager {
 
       return decoded;
     } catch (error) {
-      loggerService.error(`${this.CLASS_NAME}.${METHOD}: 验证Token失败`, {
-        error,
-        token: token.substring(0, 10) + '...'
-      });
-      throw new Error('无效的Token');
+      // 记录详细的错误信息
+      console.error('JWT Verify Error:', error);
+
+      if (error instanceof Error) {
+        loggerService.error(`${this.CLASS_NAME}.${METHOD}: 验证Token失败`, {
+          errorMessage: error.message,
+          errorStack: error.stack,
+          token: token.substring(0, 10) + '...'
+        });
+      } else {
+        loggerService.error(`${this.CLASS_NAME}.${METHOD}: 验证Token失败`, {
+          error,
+          token: token.substring(0, 10) + '...'
+        });
+      }
+
+      throw new Error(`无效的Token: ${error instanceof Error ? error.message : '未知错误'}`);
     }
   }
 }
