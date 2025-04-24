@@ -69,7 +69,7 @@ export default function Index() {
 
   return (
     <Box>
-      <Link target={'_top'} url={'/app/test'} >redirect</Link>
+      <Link target={'_top'} url={'/apps/test'} >redirect</Link>
       <Button onClick={redirect}>get redirect url</Button>
     </Box>
   );
