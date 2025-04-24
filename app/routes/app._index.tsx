@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { LoaderFunctionArgs } from "@remix-run/node";
 import {
-  Link,
   Button,
-  Box,
   Card,
   Page,
   Layout,
@@ -11,11 +9,7 @@ import {
   BlockStack,
   InlineStack
 } from "@shopify/polaris";
-import { getSessionToken } from '@shopify/app-bridge/utilities';
 import { authenticate } from "../shopify.server";
-import { useAppBridge, useNavigate } from "@shopify/app-bridge-react";
-import { Redirect } from "@shopify/app-bridge/actions";
-import createApp, { ClientApplication } from "@shopify/app-bridge";
 import { useLoaderData } from "@remix-run/react";
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
@@ -23,14 +17,14 @@ export const loader = async ({ request }: LoaderFunctionArgs) => {
     const { session } = await authenticate.admin(request);
     return { shop: session.shop };
   } catch (error) {
-    console.error("Error authenticating admin:", error.message);
+    console.error("Error authenticating admin:", error instanceof Error ? error.message : 'Unknown error');
     // Additional error details might be available in the error object
+    throw error;
   }
 };
 
 export default function Index() {
   const { shop } = useLoaderData<typeof loader>();
-  const app = useAppBridge();
   const [generatingCode, setGeneratingCode] = useState(false);
 
   // 生成认证码并跳转到自定义页面
@@ -38,15 +32,11 @@ export default function Index() {
     try {
       setGeneratingCode(true);
 
-      // 获取Shopify会话token
-      // const sessionToken = await getSessionToken(app);
-
       // 调用生成认证码的API
       const response = await fetch('/api/auth/code', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          // 'Authorization': `Bearer ${sessionToken}`
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           customerId: 'customer123', // 这里应该是实际的客户ID
@@ -60,8 +50,12 @@ export default function Index() {
 
       const data = await response.json();
 
-      // 跳转到自定义页面，带上认证码
-      window.location.href = `/apps/test?code=${data.code}`;
+      // 使用Link组件的方式跳转
+      if (window.top) {
+        window.top.location.href = `/apps/test?code=${data.code}`;
+      } else {
+        window.location.href = `/apps/test?code=${data.code}`;
+      }
     } catch (error) {
       console.error('跳转失败:', error);
       alert('跳转失败，请重试');
@@ -77,10 +71,10 @@ export default function Index() {
           <Card>
             <BlockStack gap="400">
               <Text as="h2" variant="headingMd">欢迎使用Shopify Admin集成</Text>
-              <Text>点击下方按钮跳转到自定义页面，将自动生成认证码用于后续的权限验证。</Text>
+              <Text as="p">点击下方按钮跳转到自定义页面，将自动生成认证码用于后续的权限验证。</Text>
               <InlineStack gap="300">
                 <Button
-                  primary
+                  variant="primary"
                   onClick={handleRedirect}
                   loading={generatingCode}
                 >
