@@ -110,12 +110,29 @@ export class TokenManager {
       // 记录详细的调试信息
       console.log('Payload:', JSON.stringify(payload));
       console.log('Private Key Type:', typeof privateKey);
-      console.log('Private Key Length:', privateKey.length);
+      console.log('Private Key Format:', privateKey.includes('BEGIN PRIVATE KEY') ? 'PKCS8' : privateKey.includes('BEGIN RSA PRIVATE KEY') ? 'PKCS1' : 'Unknown');
+      console.log('Private Key First 50 chars:', privateKey.substring(0, 50));
 
-      const token = jwt.sign(payload, privateKey, {
-        algorithm: 'RS256',
-        expiresIn
-      });
+      // 尝试使用简化的方式生成token
+      let token;
+      try {
+        token = jwt.sign(payload, privateKey, {
+          algorithm: 'RS256',
+          expiresIn
+        });
+      } catch (signError) {
+        console.error('First JWT sign attempt failed:', signError);
+
+        // 尝试使用不同的选项
+        token = jwt.sign(payload, privateKey, {
+          algorithm: 'RS256',
+          expiresIn,
+          noTimestamp: true
+        });
+      }
+
+      // 验证生成的token
+      console.log('Generated token first 50 chars:', token.substring(0, 50));
 
       loggerService.info(`${this.CLASS_NAME}.${METHOD}: 生成Token成功`, {
         type: payload.type,
@@ -162,11 +179,24 @@ export class TokenManager {
       // 记录详细的调试信息
       console.log('Token:', token.substring(0, 20) + '...');
       console.log('Public Key Type:', typeof publicKey);
-      console.log('Public Key Length:', publicKey.length);
+      console.log('Public Key Format:', publicKey.includes('BEGIN PUBLIC KEY') ? 'SPKI' : 'Unknown');
+      console.log('Public Key First 50 chars:', publicKey.substring(0, 50));
 
+      // 解析token结构（不验证签名）
+      try {
+        const decoded = jwt.decode(token, { complete: true });
+        console.log('Token header:', JSON.stringify(decoded?.header));
+        console.log('Token payload:', JSON.stringify(decoded?.payload));
+      } catch (decodeError) {
+        console.error('Failed to decode token:', decodeError);
+      }
+
+      // 验证token
       const decoded = jwt.verify(token, publicKey, {
         algorithms: ['RS256']
       }) as TokenPayload;
+
+      console.log('Verified token payload:', JSON.stringify(decoded));
 
       loggerService.info(`${this.CLASS_NAME}.${METHOD}: 验证Token成功`, {
         type: decoded.type,

@@ -32,6 +32,8 @@ export default function Index() {
     try {
       setGeneratingCode(true);
 
+      console.log('Generating code for shop:', shop);
+
       // 调用生成认证码的API
       const response = await fetch('/api/auth/code', {
         method: 'POST',
@@ -40,12 +42,14 @@ export default function Index() {
         },
         body: JSON.stringify({
           customerId: 'customer123', // 这里应该是实际的客户ID
-          shopId: shop
+          shopId: shop || 'default-shop.myshopify.com' // 提供默认值，以防shop为空
         })
       });
 
       if (!response.ok) {
-        throw new Error('生成认证码失败');
+        const errorData = await response.json().catch(() => ({}));
+        console.error('API Error:', errorData);
+        throw new Error(`生成认证码失败: ${errorData.error || '未知错误'}`);
       }
 
       const data = await response.json();

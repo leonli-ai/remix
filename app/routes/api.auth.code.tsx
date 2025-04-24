@@ -1,9 +1,9 @@
 import { ActionFunctionArgs, json } from "@remix-run/node";
-import { authenticate } from "~/shopify.server";
 import { TokenManager } from "~/lib/auth/token";
 import { loggerService } from "~/lib/logger";
 import { withCors } from "~/lib/middleware/cors";
 import { z } from "zod";
+import { authenticate } from "~/shopify.server";
 
 // 请求验证模式
 const generateCodeSchema = z.object({
@@ -26,6 +26,9 @@ export const action = withCors(async ({ request }: ActionFunctionArgs) => {
     if (request.method !== 'POST') {
       return json({ error: '方法不允许' }, { status: 405 });
     }
+
+    // 记录请求信息
+    console.log('Received request to generate code');
 
     // 解析请求体
     const body = await request.json();
